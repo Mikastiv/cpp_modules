@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 15:36:15 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/09 05:55:46 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/09/08 16:06:04 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/09/09 06:00:43 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Karen.hpp"
 
-#include <string>
-
-class Karen
+int main(int argc, char** argv)
 {
-public:
-    Karen();
+    Karen karen;
 
-    void complain(std::string level);
+    if (argc != 2) {
+        karen.complain("");
+        return 0;
+    }
 
-private:
-    void debug();
-    void info();
-    void warning();
-    void error();
-    void insignificant();
-
-private:
-    std::string levels[4];
-    void (Karen::*actions[5])();
-};
+    karen.complain(argv[1]);
+}

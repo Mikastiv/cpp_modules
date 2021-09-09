@@ -6,11 +6,11 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/07 01:14:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/09/09 05:52:37 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/09/09 05:54:45 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	karen
+NAME		=	karenFilter
 CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -std=c++98
 CC			=	clang++
 RM			=	rm -rf

@@ -6,7 +6,7 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/07 01:14:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/09/08 09:19:09 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/09/09 05:52:51 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ $(NAME):	$(OBJ) $(OBJS)
 			$(CC) $(OBJS) -o $(NAME)
 
 $(OBJ):
-			mkdir -p $(OBJ)
+			@mkdir -p $(OBJ)
 
 all:		$(NAME)
 
