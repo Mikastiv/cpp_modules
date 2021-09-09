@@ -1,0 +1,16 @@
+{
+  BasedOnStyle: Google,
+  AlignAfterOpenBracket: DontAlign,
+  AlignConsecutiveBitFields: true,
+  AlignConsecutiveDeclarations: true,
+  AllowShortBlocksOnASingleLine: Empty,
+  AllowShortFunctionsOnASingleLine: Inline,
+  AllowShortIfStatementsOnASingleLine: Never,
+  AllowShortLoopsOnASingleLine: false,
+  AccessModifierOffset: -4,
+  BreakBeforeBraces: Linux,
+  Cpp11BracedListStyle: false,
+  FixNamespaceComments: false,
+  IndentWidth: 4,
+  Language: Cpp,
+}
