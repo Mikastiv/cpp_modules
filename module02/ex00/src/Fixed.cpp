@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 09:10:01 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/09 09:26:01 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/10 01:33:50 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ Fixed::~Fixed()
 Fixed& Fixed::operator=(const Fixed& rhs)
 {
     std::cout << "Assignation operator called\n";
-    value = rhs.getRawBits();
+
+    if (&rhs != this)
+        value = rhs.getRawBits();
+
     return *this;
 }
 

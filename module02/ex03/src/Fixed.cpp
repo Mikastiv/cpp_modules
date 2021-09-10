@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 09:10:01 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/09 20:42:59 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/10 01:34:05 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ Fixed::~Fixed() {}
 
 Fixed& Fixed::operator=(const Fixed& rhs)
 {
-    value = rhs.getRawBits();
+    if (&rhs != this)
+        value = rhs.getRawBits();
 
     return *this;
 }

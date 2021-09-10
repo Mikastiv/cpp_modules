@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 09:49:09 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 00:49:16 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/10 01:44:21 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ int main(void)
 
     std::cout << std::boolalpha << bsp(a, b, c, d) << std::endl;
     std::cout << std::boolalpha << bsp(a, b, c, e) << std::endl;
+
+    e = b;
+    std::cout << e.getX() << " " << e.getY() << '\n';
 
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 22:34:09 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 00:24:13 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/10 01:38:08 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
     Point(const Point&);
     Point(const float x, const float y);
     ~Point();
-    // Point& operator=(const Point&);
+    Point& operator=(const Point&);
 
     Fixed getX() const;
     Fixed getY() const;

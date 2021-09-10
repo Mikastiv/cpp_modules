@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 23:04:01 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 00:24:21 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/10 01:43:11 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ Fixed Point::getY() const
     return Fixed(y);
 }
 
-// Point& Point::operator=(const Point& rhs)
-// {
-//     return *this = rhs;
-// }
+Point& Point::operator=(const Point& rhs)
+{
+    const_cast<Fixed&>(x) = rhs.getX();
+    const_cast<Fixed&>(y) = rhs.getY();
+
+    return *this;
+}
