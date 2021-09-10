@@ -6,7 +6,7 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/07 01:14:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/09/09 05:53:09 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/09/10 12:54:29 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,6 @@ fclean:		clean
 re:			fclean all
 
 format:
-			clang-format -i $(SRCS)
+			@clang-format -i $(SRCS)
 
 .PHONY:		all clean fclean re format

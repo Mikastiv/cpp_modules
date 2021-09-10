@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 04:21:24 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/08 03:07:18 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/10 12:52:14 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ void Phonebook::add_contact(Contact contact)
 
 void Phonebook::search() const
 {
+    if (size == 0) {
+        std::cout << "No contacts!\n\n";
+        return;
+    }
+
     std::cout << "-------------------------------------------\n";
     std::cout << "Index     |First name|Last name |Nickname\n";
     std::cout << "-------------------------------------------\n";
