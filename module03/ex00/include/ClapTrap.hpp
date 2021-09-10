@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 17:28:45 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 17:33:20 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/10 18:22:19 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class ClapTrap
 {
 public:
-    ClapTrap();
+    ClapTrap(const std::string& name);
     ~ClapTrap();
 
     void attack(const std::string& target);
@@ -27,6 +27,6 @@ public:
 private:
     std::string  name;
     unsigned int hitpoints;
-    unsigned int energy_points;
-    unsigned int attack_damage;
+    unsigned int energy;
+    unsigned int damage;
 };

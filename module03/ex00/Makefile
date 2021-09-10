@@ -6,12 +6,12 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/07 01:14:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/09/10 17:28:39 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/09/10 18:29:06 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	point
-CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -std=c++98
+NAME		=	clap
+CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -std=c++98
 CC			=	clang++
 RM			=	rm -rf
 
