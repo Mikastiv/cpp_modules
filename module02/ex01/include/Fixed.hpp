@@ -6,9 +6,11 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 09:10:23 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/09 10:24:28 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/09 22:25:02 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #include <iostream>
 

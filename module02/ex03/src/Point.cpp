@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 02:54:17 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/09 22:49:51 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/09/09 23:04:01 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/09/10 00:24:21 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Point.hpp"
 
-#include <string>
+Point::Point() : x(0.0f), y(0.0f) {}
 
-class Zombie
+Point::Point(const Point& other) : x(other.x), y(other.y) {}
+
+Point::Point(const float x_, const float y_) : x(x_), y(y_) {}
+
+Point::~Point() {}
+
+Fixed Point::getX() const
 {
-public:
-    Zombie(const std::string& name);
-    ~Zombie();
+    return Fixed(x);
+}
 
-    void announce() const;
+Fixed Point::getY() const
+{
+    return Fixed(y);
+}
 
-private:
-    std::string name;
-};
-
-Zombie* newZombie(std::string name);
-void    randomChump(std::string name);
+// Point& Point::operator=(const Point& rhs)
+// {
+//     return *this = rhs;
+// }

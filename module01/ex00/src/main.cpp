@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 02:51:57 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/08 03:49:51 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/09 22:51:15 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int main()
 {
-    Zombie* zombie1 = Zombie::newZombie("Roger");
-    Zombie* zombie2 = Zombie::newZombie("Frank");
+    Zombie* zombie1 = newZombie("Roger");
+    Zombie* zombie2 = newZombie("Frank");
 
     zombie1->announce();
     zombie2->announce();
-    Zombie::randomChump("Joe");
+    randomChump("Joe");
 
     delete zombie1;
     delete zombie2;

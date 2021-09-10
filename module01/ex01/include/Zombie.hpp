@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 02:54:17 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/08 04:36:02 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/09 22:53:08 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 class Zombie
 {
 public:
-    static Zombie* zombieHorde(int N, std::string name);
-
     Zombie();
     ~Zombie();
 
@@ -28,3 +26,5 @@ public:
 private:
     std::string name;
 };
+
+Zombie* zombieHorde(int N, std::string name);

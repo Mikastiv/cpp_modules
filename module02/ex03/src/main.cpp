@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 02:54:17 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/09 22:49:51 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/09/09 09:49:09 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/09/10 00:49:16 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Point.hpp"
 
-#include <string>
-
-class Zombie
+int main(void)
 {
-public:
-    Zombie(const std::string& name);
-    ~Zombie();
+    Point a(0.0f, 0.0f);
+    Point b(2.0f, 0.0f);
+    Point c(0.0f, 2.0f);
+    Point d(0.95f, 0.95f);
+    Point e(0.0f, 0.95f);
 
-    void announce() const;
+    std::cout << std::boolalpha << bsp(a, b, c, d) << std::endl;
+    std::cout << std::boolalpha << bsp(a, b, c, e) << std::endl;
 
-private:
-    std::string name;
-};
-
-Zombie* newZombie(std::string name);
-void    randomChump(std::string name);
+    return 0;
+}

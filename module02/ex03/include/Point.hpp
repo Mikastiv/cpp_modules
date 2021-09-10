@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 02:54:17 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/09 22:49:51 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/09/09 22:34:09 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/09/10 00:24:13 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <string>
+#include "Fixed.hpp"
 
-class Zombie
+class Point
 {
 public:
-    Zombie(const std::string& name);
-    ~Zombie();
+    Point();
+    Point(const Point&);
+    Point(const float x, const float y);
+    ~Point();
+    // Point& operator=(const Point&);
 
-    void announce() const;
+    Fixed getX() const;
+    Fixed getY() const;
 
 private:
-    std::string name;
+    const Fixed x;
+    const Fixed y;
 };
 
-Zombie* newZombie(std::string name);
-void    randomChump(std::string name);
+bool bsp(const Point a, const Point b, const Point c, const Point point);
