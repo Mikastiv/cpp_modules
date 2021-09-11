@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 17:28:45 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 20:43:03 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/09/10 17:25:58 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/09/10 20:44:45 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "ScavTrap.hpp"
 
-#include <string>
-
-class ClapTrap
+int main()
 {
-public:
-    ClapTrap(const std::string& name);
-    ~ClapTrap();
+    ScavTrap scav("Roger");
 
-    void attack(const std::string& target) const;
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
-
-private:
-    std::string  name;
-    unsigned int hitpoints;
-    unsigned int energy;
-    unsigned int damage;
-};
+    scav.attack("Joe");
+    scav.beRepaired(15);
+    scav.takeDamage(60);
+    scav.beRepaired(10);
+    scav.guardGate();
+}
