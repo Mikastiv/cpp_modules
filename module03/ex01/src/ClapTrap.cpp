@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 18:14:17 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 20:43:18 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/10 20:48:33 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ClapTrap::ClapTrap(const std::string& name_)
     : name(name_), hitpoints(10), energy(10), damage(0)
 {
-    std::cout << "ClapTrap " << name << " created\n";
+    std::cout << "ClapTrap " << name << " built\n";
 }
 
 ClapTrap::~ClapTrap()
