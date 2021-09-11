@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 09:10:23 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/09 22:25:02 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/10 22:17:36 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ public:
     Fixed(const int value);
     Fixed(const float value);
     ~Fixed();
-
     Fixed& operator=(const Fixed&);
 
     int   getRawBits() const;

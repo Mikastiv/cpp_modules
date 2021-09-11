@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 20:28:21 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 21:44:55 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/10 22:39:30 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <iostream>
 
-ScavTrap::ScavTrap() : ClapTrap("John")
+ScavTrap::ScavTrap() : ClapTrap()
 {
     hitpoints = 100;
     energy = 50;
@@ -23,6 +23,12 @@ ScavTrap::ScavTrap() : ClapTrap("John")
     std::cout << "ScavTrap " << name << " built\n";
 }
 
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other.name)
+{
+    *this = other;
+
+    std::cout << "ScavTrap " << name << " built\n";
+}
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 {
     hitpoints = 100;
@@ -37,6 +43,15 @@ ScavTrap::~ScavTrap()
     std::cout << "ScavTrap " << name << " destroyed\n";
 }
 
+ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)
+{
+    name = rhs.name;
+    hitpoints = rhs.hitpoints;
+    energy = rhs.energy;
+    damage = rhs.damage;
+
+    return *this;
+}
 void ScavTrap::attack(const std::string& target) const
 {
     std::cout << "ScavTrap " << name << " attacks " << target << " causing "

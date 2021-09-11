@@ -6,13 +6,29 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 20:51:04 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 20:55:18 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/10 22:36:04 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 #include <iostream>
+
+FragTrap::FragTrap() : ClapTrap()
+{
+    hitpoints = 100;
+    energy = 100;
+    damage = 30;
+
+    std::cout << "FragTrap " << name << " built\n";
+}
+
+FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other.name)
+{
+    *this = other;
+
+    std::cout << "FragTrap " << name << " built\n";
+}
 
 FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
 {
@@ -26,6 +42,16 @@ FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
 FragTrap::~FragTrap()
 {
     std::cout << "FragTrap " << name << " destroyed\n";
+}
+
+FragTrap& FragTrap::operator=(const FragTrap& rhs)
+{
+    name = rhs.name;
+    hitpoints = rhs.hitpoints;
+    energy = rhs.energy;
+    damage = rhs.damage;
+
+    return *this;
 }
 
 void FragTrap::highFivesGuys() const

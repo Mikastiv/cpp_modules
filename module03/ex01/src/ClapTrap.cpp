@@ -6,13 +6,25 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 18:14:17 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 20:48:33 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/10 22:30:05 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 #include <iostream>
+
+ClapTrap::ClapTrap() : name("Default"), hitpoints(10), energy(10), damage(0)
+{
+    std::cout << "ClapTrap " << name << " built\n";
+}
+
+ClapTrap::ClapTrap(const ClapTrap& other)
+{
+    *this = other;
+
+    std::cout << "ClapTrap " << name << " built\n";
+}
 
 ClapTrap::ClapTrap(const std::string& name_)
     : name(name_), hitpoints(10), energy(10), damage(0)
@@ -23,6 +35,16 @@ ClapTrap::ClapTrap(const std::string& name_)
 ClapTrap::~ClapTrap()
 {
     std::cout << "ClapTrap " << name << " destroyed\n";
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& rhs)
+{
+    name = rhs.name;
+    hitpoints = rhs.hitpoints;
+    energy = rhs.energy;
+    damage = rhs.damage;
+
+    return *this;
 }
 
 void ClapTrap::attack(const std::string& target) const

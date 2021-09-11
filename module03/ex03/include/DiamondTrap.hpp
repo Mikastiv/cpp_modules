@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 21:20:08 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 21:53:26 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/10 22:41:21 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@
 class DiamondTrap : public ScavTrap, public FragTrap
 {
 public:
+    DiamondTrap();
+    DiamondTrap(const DiamondTrap&);
     DiamondTrap(const std::string& name);
     virtual ~DiamondTrap();
+    DiamondTrap& operator=(const DiamondTrap&);
 
     virtual void attack(const std::string& target) const;
     void         whoAmI() const;

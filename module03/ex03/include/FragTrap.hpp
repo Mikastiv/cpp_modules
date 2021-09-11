@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 20:48:53 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 21:36:38 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/10 22:37:21 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ class FragTrap : virtual public ClapTrap
 {
 public:
     FragTrap();
+    FragTrap(const FragTrap&);
     FragTrap(const std::string& name);
     virtual ~FragTrap();
+    FragTrap& operator=(const FragTrap&);
 
     void highFivesGuys() const;
 };

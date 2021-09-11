@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 20:17:47 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 20:43:32 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/10 22:26:04 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@
 class ScavTrap : public ClapTrap
 {
 public:
+    ScavTrap();
+    ScavTrap(const ScavTrap&);
     ScavTrap(const std::string& name);
     virtual ~ScavTrap();
+    ScavTrap& operator=(const ScavTrap&);
 
     virtual void attack(const std::string& target) const;
     void         guardGate() const;
