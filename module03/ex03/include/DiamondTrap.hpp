@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 17:25:58 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 21:51:51 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/09/10 21:20:08 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/09/10 21:53:26 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#pragma once
 
+#include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-int main()
+class DiamondTrap : public ScavTrap, public FragTrap
 {
-    ClapTrap clap("James");
-    ScavTrap scav("Roger");
+public:
+    DiamondTrap(const std::string& name);
+    virtual ~DiamondTrap();
 
-    std::cout << "\nClapTrap:\n";
-    clap.attack("Frank");
-    clap.beRepaired(3);
-    clap.takeDamage(3);
-    clap.beRepaired(10);
+    virtual void attack(const std::string& target) const;
+    void         whoAmI() const;
 
-    std::cout << "\nScavTrap:\n";
-    scav.attack("Joe");
-    scav.beRepaired(15);
-    scav.takeDamage(60);
-    scav.beRepaired(10);
-    scav.guardGate();
-
-    std::cout << '\n';
-}
+private:
+    std::string name;
+};
