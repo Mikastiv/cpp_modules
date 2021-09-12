@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/11 21:53:28 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/11 22:54:49 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/09/11 22:42:54 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/09/11 23:11:30 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongCat.hpp"
+#pragma once
 
-int main()
+#include <string>
+
+class Brain
 {
-    Animal      meta;
-    Dog         j;
-    Cat         i;
-    WrongAnimal wmeta;
-    WrongCat    wcat;
+public:
+    Brain();
+    Brain(const Brain&);
+    ~Brain();
 
-    meta.makeSound();
-    j.makeSound();
-    i.makeSound();
-    wmeta.makeSound();
-    wcat.makeSound();
-}
+    Brain& operator=(const Brain&);
+
+    const std::string& getIdea(const size_t index) const;
+    void               setIdea(const std::string& idea, const size_t index);
+
+private:
+    std::string ideas[100];
+};

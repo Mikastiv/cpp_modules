@@ -1,46 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/11 21:58:02 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/11 23:03:36 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/09/11 21:46:17 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/09/11 22:00:41 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Animal.hpp"
 
 #include <iostream>
 
-Dog::Dog() : Animal()
+Animal::Animal() : type("Animal")
 {
-    type = "Dog";
-
-    std::cout << "Default Ctor: Dog created\n";
+    std::cout << "Default Ctor: Animal created\n";
 }
 
-Dog::Dog(const Dog& other) : Animal()
+Animal::Animal(const Animal& other)
 {
     *this = other;
 
-    std::cout << "Copy Ctor: Dog created\n";
+    std::cout << "Copy Ctor: Animal created\n";
 }
 
-Dog::~Dog()
+Animal::~Animal()
 {
-    std::cout << "Dtor: Dog destroyed\n";
+    std::cout << "Dtor: Animal destroyed\n";
 }
 
-Dog& Dog::operator=(const Dog& rhs)
+Animal& Animal::operator=(const Animal& rhs)
 {
     type = rhs.type;
 
     return *this;
 }
 
-void Dog::makeSound() const
+void Animal::makeSound() const
 {
-    std::cout << "Woof\n";
+    std::cout << "Animal noise\n";
 }

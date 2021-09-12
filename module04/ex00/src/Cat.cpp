@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 22:09:31 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/11 22:10:25 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/11 23:03:08 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 #include <iostream>
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {
     type = "Cat";
 
     std::cout << "Default Ctor: Cat created\n";
 }
 
-Cat::Cat(const Cat& other)
+Cat::Cat(const Cat& other) : Animal()
 {
     *this = other;
 

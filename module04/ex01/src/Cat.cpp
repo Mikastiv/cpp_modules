@@ -1,46 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/11 21:58:02 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/11 23:03:36 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/09/11 22:09:31 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/09/11 23:26:40 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
 #include <iostream>
 
-Dog::Dog() : Animal()
+Cat::Cat() : Animal(), brain(new Brain())
 {
-    type = "Dog";
+    type = "Cat";
 
-    std::cout << "Default Ctor: Dog created\n";
+    std::cout << "Default Ctor: Cat created\n";
 }
 
-Dog::Dog(const Dog& other) : Animal()
+Cat::Cat(const Cat& other) : Animal(), brain(new Brain())
 {
     *this = other;
 
-    std::cout << "Copy Ctor: Dog created\n";
+    std::cout << "Copy Ctor: Cat created\n";
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
-    std::cout << "Dtor: Dog destroyed\n";
+    delete brain;
+
+    std::cout << "Dtor: Cat destroyed\n";
 }
 
-Dog& Dog::operator=(const Dog& rhs)
+Cat& Cat::operator=(const Cat& rhs)
 {
     type = rhs.type;
+    for (size_t i = 0; i < 100; ++i) {
+        brain->setIdea(rhs.brain->getIdea(i), i);
+    }
 
     return *this;
 }
 
-void Dog::makeSound() const
+void Cat::makeSound() const
 {
-    std::cout << "Woof\n";
+    std::cout << "Meow\n";
 }

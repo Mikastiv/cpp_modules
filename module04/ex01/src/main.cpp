@@ -1,46 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/11 21:58:02 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/11 23:03:36 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/09/11 21:53:28 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/09/11 23:31:33 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Cat.hpp"
 #include "Dog.hpp"
 
-#include <iostream>
-
-Dog::Dog() : Animal()
+int main()
 {
-    type = "Dog";
+    Animal* animals[100];
 
-    std::cout << "Default Ctor: Dog created\n";
-}
+    for (size_t i = 0; i < 100; i += 2) {
+        animals[i] = new Dog();
+        animals[i + 1] = new Cat();
+    }
 
-Dog::Dog(const Dog& other) : Animal()
-{
-    *this = other;
+    for (size_t i = 0; i < 100; ++i) {
+        animals[i]->makeSound();
+    }
 
-    std::cout << "Copy Ctor: Dog created\n";
-}
+    for (size_t i = 0; i < 100; ++i) {
+        delete animals[i];
+    }
 
-Dog::~Dog()
-{
-    std::cout << "Dtor: Dog destroyed\n";
-}
+    Dog a;
+    Dog b;
+    Dog c(b);
+    Cat d;
+    Cat e;
+    Cat f(e);
 
-Dog& Dog::operator=(const Dog& rhs)
-{
-    type = rhs.type;
-
-    return *this;
-}
-
-void Dog::makeSound() const
-{
-    std::cout << "Woof\n";
+    b = a;
+    e = d;
 }

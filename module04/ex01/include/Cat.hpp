@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/11 21:53:28 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/11 22:54:49 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/09/11 22:05:44 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/09/11 22:59:51 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongCat.hpp"
+#pragma once
 
-int main()
+#include "Animal.hpp"
+#include "Brain.hpp"
+
+class Cat : public Animal
 {
-    Animal      meta;
-    Dog         j;
-    Cat         i;
-    WrongAnimal wmeta;
-    WrongCat    wcat;
+public:
+    Cat();
+    Cat(const Cat&);
+    virtual ~Cat();
 
-    meta.makeSound();
-    j.makeSound();
-    i.makeSound();
-    wmeta.makeSound();
-    wcat.makeSound();
-}
+    Cat& operator=(const Cat&);
+
+    virtual void makeSound() const;
+
+private:
+    Brain* brain;
+};
