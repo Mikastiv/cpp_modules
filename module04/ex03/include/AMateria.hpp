@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 20:17:47 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/12 04:54:21 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/09/12 04:50:18 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/09/12 06:32:00 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "ClapTrap.hpp"
+#include <string>
 
-class ScavTrap : public ClapTrap
+class ICharacter;
+
+class AMateria
 {
 public:
-    ScavTrap();
-    ScavTrap(const ScavTrap&);
-    ScavTrap(const std::string& name);
-    virtual ~ScavTrap();
-    ScavTrap& operator=(const ScavTrap&);
+    AMateria();
+    AMateria(const AMateria&);
+    AMateria(const std::string& type);
+    AMateria& operator=(const AMateria& rhs);
+    virtual ~AMateria();
 
-    void guardGate() const;
+    const std::string& getType() const;
 
-    virtual void attack(const std::string& target) const;
+    virtual AMateria* clone() const = 0;
+    virtual void      use(ICharacter& target);
+
+protected:
+    std::string type;
 };

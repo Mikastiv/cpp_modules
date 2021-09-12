@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 20:17:47 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/12 04:54:21 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/09/12 05:52:36 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/09/12 06:04:54 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "AMateria.hpp"
 
-#include "ClapTrap.hpp"
+AMateria::AMateria() : type() {}
 
-class ScavTrap : public ClapTrap
+AMateria::AMateria(const AMateria& other)
 {
-public:
-    ScavTrap();
-    ScavTrap(const ScavTrap&);
-    ScavTrap(const std::string& name);
-    virtual ~ScavTrap();
-    ScavTrap& operator=(const ScavTrap&);
+    *this = other;
+}
 
-    void guardGate() const;
+AMateria& AMateria::operator=(const AMateria& rhs)
+{
+    type = rhs.type;
 
-    virtual void attack(const std::string& target) const;
-};
+    return *this;
+}
+
+AMateria::~AMateria() {}
+
+const std::string& AMateria::getType() const
+{
+    return type;
+}
+
+void AMateria::use(ICharacter& target)
+{
+    (void)target;
+}

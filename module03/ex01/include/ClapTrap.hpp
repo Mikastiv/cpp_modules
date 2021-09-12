@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 17:28:45 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 22:24:13 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/12 04:53:41 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ public:
     virtual ~ClapTrap();
     ClapTrap& operator=(const ClapTrap&);
 
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
+
     virtual void attack(const std::string& target) const;
-    void         takeDamage(unsigned int amount);
-    void         beRepaired(unsigned int amount);
 
 protected:
     std::string  name;

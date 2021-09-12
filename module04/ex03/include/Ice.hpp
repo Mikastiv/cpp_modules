@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 20:17:47 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/12 04:54:21 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/09/12 05:09:54 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/09/12 06:14:19 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "ClapTrap.hpp"
+#include "AMateria.hpp"
 
-class ScavTrap : public ClapTrap
+class Ice : public AMateria
 {
 public:
-    ScavTrap();
-    ScavTrap(const ScavTrap&);
-    ScavTrap(const std::string& name);
-    virtual ~ScavTrap();
-    ScavTrap& operator=(const ScavTrap&);
+    Ice();
+    Ice(const Ice&);
+    virtual ~Ice();
 
-    void guardGate() const;
+    Ice& operator=(const Ice&);
 
-    virtual void attack(const std::string& target) const;
+    virtual AMateria* clone() const;
+    virtual void      use(ICharacter& target);
 };

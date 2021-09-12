@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 20:17:47 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/12 04:54:21 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/09/12 05:43:37 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/09/12 06:42:14 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "ClapTrap.hpp"
+#include "IMateriaSource.hpp"
 
-class ScavTrap : public ClapTrap
+class MateriaSource : public IMateriaSource
 {
 public:
-    ScavTrap();
-    ScavTrap(const ScavTrap&);
-    ScavTrap(const std::string& name);
-    virtual ~ScavTrap();
-    ScavTrap& operator=(const ScavTrap&);
+    MateriaSource();
+    MateriaSource(const MateriaSource&);
+    MateriaSource& operator=(const MateriaSource&);
+    virtual ~MateriaSource();
 
-    void guardGate() const;
+    virtual void      learnMateria(AMateria*);
+    virtual AMateria* createMateria(const std::string& type);
 
-    virtual void attack(const std::string& target) const;
+private:
+    AMateria* materias[4];
 };

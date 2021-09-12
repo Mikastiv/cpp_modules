@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 20:17:47 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 22:26:04 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/12 04:53:48 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ public:
     virtual ~ScavTrap();
     ScavTrap& operator=(const ScavTrap&);
 
+    void guardGate() const;
+
     virtual void attack(const std::string& target) const;
-    void         guardGate() const;
 };

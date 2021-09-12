@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 07:16:01 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/09 22:56:06 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/12 06:17:24 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,6 @@ int main(int argc, char** argv)
     input.close();
     replace(content, s1, s2);
 
-    for (size_t i = 0; i < filename.length(); ++i) {
-        filename[i] = (char)std::toupper(filename[i]);
-    }
     filename += ".replace";
     std::ofstream output(filename.c_str());
 

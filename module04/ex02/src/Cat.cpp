@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 22:09:31 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/11 23:26:40 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/12 06:47:18 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ Cat::~Cat()
 
 Cat& Cat::operator=(const Cat& rhs)
 {
+    if (this == &rhs)
+        return *this;
+
     type = rhs.type;
     for (size_t i = 0; i < 100; ++i) {
         brain->setIdea(rhs.brain->getIdea(i), i);
