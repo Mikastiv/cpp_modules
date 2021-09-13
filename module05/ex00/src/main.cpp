@@ -1,0 +1,45 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/12 19:25:46 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/09/12 23:11:28 by mleblanc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Bureaucrat.hpp"
+
+int main()
+{
+    Bureaucrat a("John", 1);
+    Bureaucrat b("Joe", 150);
+
+    try {
+        Bureaucrat c("Exception", 0);
+    } catch (std::exception& e) {
+        std::cout << e.what() << "\n";
+    }
+
+    try {
+        Bureaucrat c("Exception", 151);
+    } catch (std::exception& e) {
+        std::cout << e.what() << "\n";
+    }
+
+    try {
+        std::cout << a << "\n";
+        a.incrementGrade();
+    } catch (std::exception& e) {
+        std::cout << e.what() << "\n";
+    }
+
+    try {
+        std::cout << b << "\n";
+        b.decrementGrade();
+    } catch (std::exception& e) {
+        std::cout << e.what() << "\n";
+    }
+}
