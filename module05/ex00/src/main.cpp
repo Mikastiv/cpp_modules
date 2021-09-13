@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 19:25:46 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/12 23:11:28 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/09/12 23:30:27 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ int main()
 
     try {
         std::cout << a << "\n";
+        a.decrementGrade();
+        std::cout << a << "\n";
+        a.incrementGrade();
+        std::cout << a << std::endl;
         a.incrementGrade();
     } catch (std::exception& e) {
         std::cout << e.what() << "\n";
@@ -38,6 +42,10 @@ int main()
 
     try {
         std::cout << b << "\n";
+        b.incrementGrade();
+        std::cout << b << "\n";
+        b.decrementGrade();
+        std::cout << b << std::endl;
         b.decrementGrade();
     } catch (std::exception& e) {
         std::cout << e.what() << "\n";
