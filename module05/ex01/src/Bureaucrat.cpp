@@ -6,14 +6,13 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 19:42:24 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/04 11:07:43 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/04 11:08:11 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-#define GRADE_LOW 150
-#define GRADE_HIGH 1
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : name("Default"), grade(GRADE_LOW) {}
 
@@ -59,6 +58,17 @@ void Bureaucrat::decrementGrade()
 {
     ++grade;
     checkGrade();
+}
+
+void Bureaucrat::signForm(Form& form) const
+{
+    try {
+        form.beSigned(*this);
+        std::cout << getName() << " signs " << form.getName() << "\n";
+    } catch (std::exception& e) {
+        std::cout << getName() << " cannot sign " << form.getName()
+                  << " because " << e.what() << "\n";
+    }
 }
 
 void Bureaucrat::checkGrade() const

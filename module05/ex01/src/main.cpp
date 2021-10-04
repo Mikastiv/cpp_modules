@@ -1,31 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/09 23:04:01 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/01 14:13:52 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/09/12 19:25:46 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/10/04 11:09:05 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "Bureaucrat.hpp"
 
-Point::Point() : x(0.0f), y(0.0f) {}
-
-Point::Point(const Point& other) : x(other.x), y(other.y) {}
-
-Point::Point(const float x_, const float y_) : x(x_), y(y_) {}
-
-Point::~Point() {}
-
-Fixed Point::getX() const
-{
-    return Fixed(x);
-}
-
-Fixed Point::getY() const
-{
-    return Fixed(y);
-}
+int main() {}

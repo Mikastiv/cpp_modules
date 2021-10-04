@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 19:25:46 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/12 23:30:27 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/01 13:54:27 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int main()
 {
-    Bureaucrat a("John", 1);
-    Bureaucrat b("Joe", 150);
-
     try {
         Bureaucrat c("Exception", 0);
     } catch (std::exception& e) {
@@ -28,6 +25,9 @@ int main()
     } catch (std::exception& e) {
         std::cout << e.what() << "\n";
     }
+
+    Bureaucrat a("John", 1);
+    Bureaucrat b("Joe", 150);
 
     try {
         std::cout << a << "\n";
