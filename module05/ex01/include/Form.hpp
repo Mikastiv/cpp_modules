@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 13:55:38 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/04 10:59:12 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/04 12:31:00 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ class Form
 public:
     Form();
     Form(const Form&);
+    Form(const std::string& name, unsigned int sign_grade,
+        unsigned int exec_grade);
     Form& operator=(const Form&);
     ~Form();
 

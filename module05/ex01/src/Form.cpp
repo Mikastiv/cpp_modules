@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 13:56:24 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/04 11:14:36 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/04 12:32:39 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@ Form::Form(const Form& other)
       sign_grade(other.sign_grade),
       exec_grade(other.exec_grade),
       is_signed(other.is_signed)
+{
+    checkGrades();
+}
+
+Form::Form(const std::string& name_, unsigned int sign_grade_,
+    unsigned int exec_grade_)
+    : name(name_), sign_grade(sign_grade_), exec_grade(exec_grade_)
 {
     checkGrades();
 }
@@ -41,6 +48,11 @@ const std::string& Form::getName() const
 unsigned int Form::getSignGrade() const
 {
     return sign_grade;
+}
+
+unsigned int Form::getExecGrade() const
+{
+    return exec_grade;
 }
 
 bool Form::isSigned() const
