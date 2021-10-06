@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 19:39:07 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/04 10:55:03 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/06 15:31:23 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 #include <iostream>
 #include <string>
 
-#define GRADE_LOW 1
-#define GRADE_HIGH 150
+#define GRADE_LOW 150
+#define GRADE_HIGH 1
 
 class Form;
 
