@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 19:25:46 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/04 12:32:17 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/06 15:37:01 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,18 @@ int main()
         std::cout << e.what() << "\n";
     }
 
-    Form f("Test", 0, 5);
+    try {
+        Form f("Test", 0, 5);
+    } catch (std::exception& e) {
+        std::cout << e.what() << "\n";
+    }
+
+    try {
+        Form f("Test", 1, 151);
+    } catch (std::exception& e) {
+        std::cout << e.what() << "\n";
+    }
+
+    Form f("Test", 6, 35);
+    std::cout << f << "\n";
 }

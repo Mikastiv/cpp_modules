@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 13:56:24 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/04 12:32:39 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/06 15:36:47 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ std::ostream& operator<<(std::ostream& os, const Form& f)
 {
     os << f.getName() << ", form signing grade " << f.getSignGrade()
        << ", executing grade " << f.getExecGrade()
-       << (f.isSigned() ? " is signed" : " is not signed");
+       << (f.isSigned() ? ", is signed" : ", is not signed");
 
     return os;
 }
