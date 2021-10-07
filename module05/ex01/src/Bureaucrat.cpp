@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 19:42:24 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/04 11:08:11 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/07 13:13:01 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,12 @@ void Bureaucrat::checkGrade() const
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return "Grade too high";
+    return "grade too high";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return "Grade too low";
+    return "grade too low";
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b)

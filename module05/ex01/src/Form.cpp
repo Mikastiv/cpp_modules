@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 13:56:24 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/06 15:36:47 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/07 13:14:43 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,17 +84,17 @@ void Form::checkGrades() const
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-    return "Grade too high";
+    return "grade too high";
 }
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-    return "Grade too low";
+    return "grade too low";
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& f)
 {
-    os << f.getName() << ", form signing grade " << f.getSignGrade()
+    os << f.getName() << ", form, signing grade " << f.getSignGrade()
        << ", executing grade " << f.getExecGrade()
        << (f.isSigned() ? ", is signed" : ", is not signed");
 

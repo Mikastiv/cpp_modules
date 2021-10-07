@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 19:25:46 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/06 15:37:01 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/07 13:13:58 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,29 @@ int main()
         std::cout << e.what() << "\n";
     }
 
-    Form f("Test", 6, 35);
+    Form f("Test", 35, 6);
     std::cout << f << "\n";
+
+    Bureaucrat test("Jack", 40);
+    Bureaucrat test1("Jim", 35);
+    Bureaucrat test2("Joe", 1);
+
+    try {
+        test.signForm(f);
+    } catch (std::exception& e) {
+        std::cout << e.what() << "\n";
+    }
+
+    try {
+        test1.signForm(f);
+    } catch (std::exception& e) {
+        std::cout << e.what() << "\n";
+    }
+
+    try {
+        test2.signForm(f);
+        std::cout << f << "\n";
+    } catch (std::exception& e) {
+        std::cout << e.what() << "\n";
+    }
 }
