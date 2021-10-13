@@ -6,7 +6,7 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/07 01:14:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/10/01 13:56:51 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/10/13 19:20:23 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ INC			=	include
 SRC			=	src
 OBJ			=	obj
 
-HFILES		=	Bureaucrat.hpp Form.hpp
-CFILES		=	main.cpp Bureaucrat.cpp Form.cpp
+HFILES		=	Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp
+CFILES		=	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
 OFILES		=	$(CFILES:.cpp=.o)
 INCS		=	$(addprefix $(INC)/, $(HFILES))
 SRCS		=	$(addprefix $(SRC)/, $(CFILES))

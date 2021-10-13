@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 13:23:06 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/13 18:34:41 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/10/13 18:44:38 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/10/13 19:17:02 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-class ShrubberyCreationForm : public Form
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("Default", 145, 137) {}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
 {
-public:
-    ShrubberyCreationForm();
-    ShrubberyCreationForm(const ShrubberyCreationForm&);
-    ShrubberyCreationForm& operator=(const ShrubberyCreationForm&);
-    ~ShrubberyCreationForm();
-};
+    *this = other;
+}
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(
+    const ShrubberyCreationForm& rhs)
+{
+    return *this;
+}
+
+ShrubberyCreationForm::~ShrubberyCreationForm() {}
