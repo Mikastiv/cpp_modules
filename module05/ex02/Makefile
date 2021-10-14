@@ -6,7 +6,7 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/07 01:14:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/10/13 22:08:19 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/10/14 13:56:54 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,9 @@ SRC			=	src
 OBJ			=	obj
 
 HFILES		=	Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp\
-				PresidentialRequestForm.hpp
+				PresidentialPardonForm.hpp
 CFILES		=	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp\
-				PresidentialRequestForm.cpp
+				PresidentialPardonForm.cpp
 OFILES		=	$(CFILES:.cpp=.o)
 INCS		=	$(addprefix $(INC)/, $(HFILES))
 SRCS		=	$(addprefix $(SRC)/, $(CFILES))

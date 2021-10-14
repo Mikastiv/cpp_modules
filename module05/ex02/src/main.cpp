@@ -6,11 +6,13 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 19:25:46 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/07 13:13:58 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/14 14:21:40 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
@@ -51,24 +53,11 @@ int main()
         std::cout << e.what() << "\n";
     }
 
-    try {
-        Form f("Test", 0, 5);
-    } catch (std::exception& e) {
-        std::cout << e.what() << "\n";
-    }
-
-    try {
-        Form f("Test", 1, 151);
-    } catch (std::exception& e) {
-        std::cout << e.what() << "\n";
-    }
-
-    Form f("Test", 35, 6);
-    std::cout << f << "\n";
-
     Bureaucrat test("Jack", 40);
     Bureaucrat test1("Jim", 35);
     Bureaucrat test2("Joe", 1);
+
+    ShrubberyCreationForm f("Random", );
 
     try {
         test.signForm(f);

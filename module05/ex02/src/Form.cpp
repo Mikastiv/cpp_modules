@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 13:56:24 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/13 22:37:09 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/14 13:55:33 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Form::Form(const Form& other)
 
 Form::Form(const std::string& name_, const std::string& target_, unsigned int sign_grade_,
     unsigned int exec_grade_)
-    : name(name_), sign_grade(sign_grade_), exec_grade(exec_grade_)
+    : name(name_), target(target_), sign_grade(sign_grade_), exec_grade(exec_grade_)
 {
     checkGrades();
 }
