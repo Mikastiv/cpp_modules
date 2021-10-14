@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 22:08:59 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/14 14:53:04 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/14 14:59:31 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,8 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
+
+void PresidentialPardonForm::execute(const Bureaucrat& executor) const
+{
+    if (getExecGrade() < executor.getGrade()) throw Form::GradeTooLowException();
+}

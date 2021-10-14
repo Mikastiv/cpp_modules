@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 19:25:46 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/14 14:21:40 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/14 15:52:44 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int main()
     Bureaucrat test1("Jim", 35);
     Bureaucrat test2("Joe", 1);
 
-    ShrubberyCreationForm f("Random", );
+    ShrubberyCreationForm f("random");
 
     try {
         test.signForm(f);
@@ -77,4 +77,6 @@ int main()
     } catch (std::exception& e) {
         std::cout << e.what() << "\n";
     }
+
+    f.execute(test);
 }

@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 21:59:51 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/14 14:51:27 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/14 14:59:29 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,8 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm&)
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
+
+void RobotomyRequestForm::execute(const Bureaucrat& executor) const
+{
+    if (getExecGrade() < executor.getGrade()) throw Form::GradeTooLowException();
+}

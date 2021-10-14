@@ -6,11 +6,13 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 18:44:38 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/14 14:27:01 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/14 15:56:25 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+
+#include <fstream>
 
 #define DEFAULT_NAME "Shrubbery"
 #define SIGN_GRADE 145
@@ -37,3 +39,45 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
+
+void ShrubberyCreationForm::execute(const Bureaucrat& executor) const
+{
+    if (getExecGrade() < executor.getGrade()) throw Form::GradeTooLowException();
+
+    std::ofstream file(getTarget() + "_shrubbery");
+
+    if (file.is_open()) {
+        for (int i = 0; i < 5; ++i) {
+            file << "                                                         .\n"
+                 << "                                              .         ;\n"
+                 << "                 .              .              ;%     ;;\n"
+                 << "                   ,           ,                :;%  %;\n"
+                 << "                    :         ;                   :;%;'     .,\n"
+                 << "           ,.        %;     %;            ;        %;'    ,;\n"
+                 << "             ;       ;%;  %%;        ,     %;    ;%;    ,%'\n"
+                 << "              %;       %;%;      ,  ;       %;  ;%;   ,%;' \n"
+                 << "               ;%;      %;        ;%;        % ;%;  ,%;'\n"
+                 << "                `%;.     ;%;     %;'         `;%%;.%;'\n"
+                 << "                 `:;%.    ;%%. %@;        %; ;@%;%'\n"
+                 << "                    `:%;.  :;bd%;          %;@%;'\n"
+                 << "                      `@%:.  :;%.         ;@@%;'\n"
+                 << "                        `@%.  `;@%.      ;@@%;\n"
+                 << "                          `@%%. `@%%    ;@@%;\n"
+                 << "                            ;@%. :@%%  %@@%;\n"
+                 << "                              %@bd%%%bd%%:;\n"
+                 << "                                #@%%%%%:;;\n"
+                 << "                                %@@%%%::;\n"
+                 << "                                %@@@%(o);  . '\n"
+                 << "                                %@@@o%;:(.,'\n"
+                 << "                            `.. %@@@o%::;\n"
+                 << "                               `)@@@o%::;\n"
+                 << "                                %@@(o)::;\n"
+                 << "                               .%@@@@%::;\n"
+                 << "                               ;%@@@@%::;.\n"
+                 << "                              ;%@@@@%%:;;;.\n"
+                 << "                          ...;%@@@@@%%:;;;;,..";
+
+            if (i < 4) file << "\n";
+        }
+    }
+}
