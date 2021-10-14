@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 13:55:38 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/04 12:31:00 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/13 22:37:30 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,15 @@ class Form
 public:
     Form();
     Form(const Form&);
-    Form(const std::string& name, unsigned int sign_grade, unsigned int exec_grade);
+    Form(const std::string& name, const std::string& target, unsigned int sign_grade,
+        unsigned int exec_grade);
     Form& operator=(const Form&);
     ~Form();
 
+    virtual void execute(const Bureaucrat& executor) const = 0;
+
     const std::string& getName() const;
+    const std::string& getTarget() const;
     unsigned int       getSignGrade() const;
     unsigned int       getExecGrade() const;
     bool               isSigned() const;
@@ -43,6 +47,7 @@ public:
 
 private:
     const std::string  name;
+    const std::string  target;
     const unsigned int sign_grade;
     const unsigned int exec_grade;
     bool               is_signed;

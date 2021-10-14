@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 18:44:38 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/13 22:25:25 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/10/13 22:08:59 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/10/13 22:24:33 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("Default", "Default", 145, 137) {}
+PresidentialPardonForm::PresidentialPardonForm() : Form("Default", "Default", 25, 5) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other)
     : Form(other.getName(), other.getTarget(), other.getSignGrade(), other.getExecGrade())
 {
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& rhs)
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& rhs)
 {
     return *this;
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm() {}
+PresidentialPardonForm::~PresidentialPardonForm() {}

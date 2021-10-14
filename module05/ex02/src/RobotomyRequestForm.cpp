@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 18:44:38 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/13 22:25:25 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/10/13 21:59:51 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/10/13 22:25:05 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("Default", "Default", 145, 137) {}
+RobotomyRequestForm::RobotomyRequestForm() : Form("Default", "Default", 72, 45) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
     : Form(other.getName(), other.getTarget(), other.getSignGrade(), other.getExecGrade())
 {
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& rhs)
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& rhs)
 {
     return *this;
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm() {}
+RobotomyRequestForm::~RobotomyRequestForm() {}

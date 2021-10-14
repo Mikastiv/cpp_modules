@@ -6,16 +6,17 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 13:56:24 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/07 13:14:43 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/13 22:37:09 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : name("Default"), sign_grade(GRADE_LOW), exec_grade(GRADE_LOW) {}
+Form::Form() : name("Default"), target("Default"), sign_grade(GRADE_LOW), exec_grade(GRADE_LOW) {}
 
 Form::Form(const Form& other)
     : name(other.name),
+      target(other.target),
       sign_grade(other.sign_grade),
       exec_grade(other.exec_grade),
       is_signed(other.is_signed)
@@ -23,7 +24,8 @@ Form::Form(const Form& other)
     checkGrades();
 }
 
-Form::Form(const std::string& name_, unsigned int sign_grade_, unsigned int exec_grade_)
+Form::Form(const std::string& name_, const std::string& target_, unsigned int sign_grade_,
+    unsigned int exec_grade_)
     : name(name_), sign_grade(sign_grade_), exec_grade(exec_grade_)
 {
     checkGrades();
@@ -42,6 +44,11 @@ Form::~Form() {}
 const std::string& Form::getName() const
 {
     return name;
+}
+
+const std::string& Form::getTarget() const
+{
+    return target;
 }
 
 unsigned int Form::getSignGrade() const
