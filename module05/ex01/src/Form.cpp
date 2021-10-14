@@ -23,8 +23,7 @@ Form::Form(const Form& other)
     checkGrades();
 }
 
-Form::Form(const std::string& name_, unsigned int sign_grade_,
-    unsigned int exec_grade_)
+Form::Form(const std::string& name_, unsigned int sign_grade_, unsigned int exec_grade_)
     : name(name_), sign_grade(sign_grade_), exec_grade(exec_grade_)
 {
     checkGrades();
@@ -94,9 +93,8 @@ const char* Form::GradeTooLowException::what() const throw()
 
 std::ostream& operator<<(std::ostream& os, const Form& f)
 {
-    os << f.getName() << ", form, signing grade " << f.getSignGrade()
-       << ", executing grade " << f.getExecGrade()
-       << (f.isSigned() ? ", is signed" : ", is not signed");
+    os << f.getName() << ", form, signing grade " << f.getSignGrade() << ", executing grade "
+       << f.getExecGrade() << (f.isSigned() ? ", is signed" : ", is not signed");
 
     return os;
 }

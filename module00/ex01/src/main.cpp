@@ -18,8 +18,7 @@ int main(void)
     Phonebook   phonebook;
 
     for (;;) {
-        std::cout << "==Phonebook==\nCommands: ADD SEARCH EXIT\n> "
-                  << std::flush;
+        std::cout << "==Phonebook==\nCommands: ADD SEARCH EXIT\n> " << std::flush;
         std::cin >> input;
         if (input == "ADD") {
             phonebook.add();

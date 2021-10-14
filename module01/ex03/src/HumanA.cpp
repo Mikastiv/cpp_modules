@@ -14,10 +14,7 @@
 
 #include <iostream>
 
-HumanA::HumanA(const std::string& name_, Weapon& weapon_)
-    : name(name_), weapon(weapon_)
-{
-}
+HumanA::HumanA(const std::string& name_, Weapon& weapon_) : name(name_), weapon(weapon_) {}
 
 void HumanA::attack() const
 {

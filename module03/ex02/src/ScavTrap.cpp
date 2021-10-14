@@ -56,8 +56,8 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)
 
 void ScavTrap::attack(const std::string& target) const
 {
-    std::cout << "ScavTrap " << name << " attacks " << target << " causing "
-              << damage << " points of damage!\n";
+    std::cout << "ScavTrap " << name << " attacks " << target << " causing " << damage
+              << " points of damage!\n";
 }
 
 void ScavTrap::guardGate() const

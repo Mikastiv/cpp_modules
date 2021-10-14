@@ -19,8 +19,7 @@ class Form
 public:
     Form();
     Form(const Form&);
-    Form(const std::string& name, unsigned int sign_grade,
-        unsigned int exec_grade);
+    Form(const std::string& name, unsigned int sign_grade, unsigned int exec_grade);
     Form& operator=(const Form&);
     ~Form();
 

@@ -9,6 +9,7 @@
   AllowShortLoopsOnASingleLine: false,
   AccessModifierOffset: -4,
   BreakBeforeBraces: Linux,
+  ColumnLimit : 100,
   Cpp11BracedListStyle: false,
   FixNamespaceComments: false,
   IndentWidth: 4,

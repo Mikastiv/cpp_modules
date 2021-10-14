@@ -25,6 +25,6 @@ bool bsp(const Point a, const Point b, const Point c, const Point point)
     Fixed p2 = formula(point, c, a) / denom;
     Fixed p3 = Fixed(1) - p1 - p2;
 
-    return Fixed(0) < p1 && p1 < Fixed(1) && Fixed(0) < p2 && p2 < Fixed(1) &&
-           Fixed(0) < p3 && p3 < Fixed(1);
+    return Fixed(0) < p1 && p1 < Fixed(1) && Fixed(0) < p2 && p2 < Fixed(1) && Fixed(0) < p3 &&
+           p3 < Fixed(1);
 }

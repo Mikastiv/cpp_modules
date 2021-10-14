@@ -16,14 +16,12 @@
 
 Bureaucrat::Bureaucrat() : name("Default"), grade(GRADE_LOW) {}
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other)
-    : name(other.name), grade(other.grade)
+Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade(other.grade)
 {
     checkGrade();
 }
 
-Bureaucrat::Bureaucrat(const std::string& name_, unsigned int grade_)
-    : name(name_), grade(grade_)
+Bureaucrat::Bureaucrat(const std::string& name_, unsigned int grade_) : name(name_), grade(grade_)
 {
     checkGrade();
 }
@@ -66,8 +64,8 @@ void Bureaucrat::signForm(Form& form) const
         form.beSigned(*this);
         std::cout << getName() << " signs " << form.getName() << "\n";
     } catch (std::exception& e) {
-        std::cout << getName() << " cannot sign " << form.getName()
-                  << " because " << e.what() << "\n";
+        std::cout << getName() << " cannot sign " << form.getName() << " because " << e.what()
+                  << "\n";
     }
 }
 

@@ -16,8 +16,7 @@
 #include <iostream>
 
 Contact::Contact(const std::string& firstname_, const std::string& lastname_,
-    const std::string& nickname_, const std::string& phone_,
-    const std::string& secret_)
+    const std::string& nickname_, const std::string& phone_, const std::string& secret_)
     : firstname(firstname_),
       lastname(lastname_),
       nickname(nickname_),
@@ -26,19 +25,13 @@ Contact::Contact(const std::string& firstname_, const std::string& lastname_,
 {
 }
 
-Contact::Contact()
-    : firstname(""), lastname(""), nickname(""), phone(""), secret("")
-{
-}
+Contact::Contact() : firstname(""), lastname(""), nickname(""), phone(""), secret("") {}
 
 void Contact::print_column(size_t index) const
 {
-    std::string first =
-        firstname.length() > 9 ? firstname.substr(0, 9) + "." : firstname;
-    std::string last =
-        lastname.length() > 9 ? lastname.substr(0, 9) + "." : lastname;
-    std::string nick =
-        nickname.length() > 9 ? nickname.substr(0, 9) + "." : nickname;
+    std::string first = firstname.length() > 9 ? firstname.substr(0, 9) + "." : firstname;
+    std::string last = lastname.length() > 9 ? lastname.substr(0, 9) + "." : lastname;
+    std::string nick = nickname.length() > 9 ? nickname.substr(0, 9) + "." : nickname;
 
     std::cout << std::setw(10) << std::left << index << '|';
     std::cout << std::setw(10) << first << '|';

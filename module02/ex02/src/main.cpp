@@ -56,20 +56,20 @@ int main(void)
     std::cout << "9.87f / 4.5f = " << 9.87f / 4.5f << '\n';
     std::cout << "c / 4.5 = " << c / Fixed(4.5f) << "\n\n";
 
-    std::cout << std::setw(7) << a << std::setw(4) << " > " << std::setw(7) << b
-              << " = " << std::boolalpha << (a > b) << '\n';
-    std::cout << std::setw(7) << c << std::setw(4) << " >= " << std::setw(7)
-              << d << " = " << std::boolalpha << (c >= d) << '\n';
-    std::cout << std::setw(7) << a << std::setw(4) << " < " << std::setw(7) << b
-              << " = " << std::boolalpha << (a < b) << '\n';
-    std::cout << std::setw(7) << c << std::setw(4) << " <= " << std::setw(7)
-              << d << " = " << std::boolalpha << (c <= d) << '\n';
-    std::cout << std::setw(7) << c << std::setw(4) << " <= " << std::setw(7)
-              << b << " = " << std::boolalpha << (c <= b) << '\n';
-    std::cout << std::setw(7) << a << std::setw(4) << " == " << std::setw(7)
-              << b << " = " << std::boolalpha << (a == b) << '\n';
-    std::cout << std::setw(7) << c << std::setw(4) << " == " << std::setw(7)
-              << d << " = " << std::boolalpha << (c == d) << '\n';
+    std::cout << std::setw(7) << a << std::setw(4) << " > " << std::setw(7) << b << " = "
+              << std::boolalpha << (a > b) << '\n';
+    std::cout << std::setw(7) << c << std::setw(4) << " >= " << std::setw(7) << d << " = "
+              << std::boolalpha << (c >= d) << '\n';
+    std::cout << std::setw(7) << a << std::setw(4) << " < " << std::setw(7) << b << " = "
+              << std::boolalpha << (a < b) << '\n';
+    std::cout << std::setw(7) << c << std::setw(4) << " <= " << std::setw(7) << d << " = "
+              << std::boolalpha << (c <= d) << '\n';
+    std::cout << std::setw(7) << c << std::setw(4) << " <= " << std::setw(7) << b << " = "
+              << std::boolalpha << (c <= b) << '\n';
+    std::cout << std::setw(7) << a << std::setw(4) << " == " << std::setw(7) << b << " = "
+              << std::boolalpha << (a == b) << '\n';
+    std::cout << std::setw(7) << c << std::setw(4) << " == " << std::setw(7) << d << " = "
+              << std::boolalpha << (c == d) << '\n';
 
     return 0;
 }

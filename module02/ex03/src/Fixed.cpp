@@ -41,10 +41,7 @@ Fixed::Fixed() : value(0) {}
 
 Fixed::Fixed(const int value_) : value(value_ << frac_bits) {}
 
-Fixed::Fixed(const float value_)
-    : value((int)roundf(value_ * (float)(1 << frac_bits)))
-{
-}
+Fixed::Fixed(const float value_) : value((int)roundf(value_ * (float)(1 << frac_bits))) {}
 
 Fixed::Fixed(const Fixed& other)
 {

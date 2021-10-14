@@ -18,9 +18,8 @@ class Contact
 {
 public:
     Contact();
-    Contact(const std::string& firstname, const std::string& lastname,
-        const std::string& nickname, const std::string& phone,
-        const std::string& secret);
+    Contact(const std::string& firstname, const std::string& lastname, const std::string& nickname,
+        const std::string& phone, const std::string& secret);
 
     void print_column(size_t index) const;
     void print_full() const;

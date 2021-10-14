@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 18:44:38 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/13 19:17:02 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/13 21:42:26 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 ShrubberyCreationForm::ShrubberyCreationForm() : Form("Default", 145, 137) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
+    : Form(other.getName(), other.getSignGrade(), other.getExecGrade())
 {
-    *this = other;
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator=(
-    const ShrubberyCreationForm& rhs)
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& rhs)
 {
     return *this;
 }

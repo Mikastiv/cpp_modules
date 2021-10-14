@@ -51,10 +51,9 @@ void Karen::debug()
 void Karen::info()
 {
     std::cout << "[ INFO ]\n";
-    std::cout
-        << "I cannot believe adding extra bacon cost more "
-           "money.\nYou "
-           "don’t put enough! If you did I would not have to ask for it!\n\n";
+    std::cout << "I cannot believe adding extra bacon cost more "
+                 "money.\nYou "
+                 "don’t put enough! If you did I would not have to ask for it!\n\n";
 }
 
 void Karen::warning()
@@ -69,8 +68,7 @@ void Karen::warning()
 void Karen::error()
 {
     std::cout << "[ ERROR ]\n";
-    std::cout
-        << "This is unacceptable, I want to speak to the manager now.\n\n";
+    std::cout << "This is unacceptable, I want to speak to the manager now.\n\n";
 }
 
 void Karen::insignificant()

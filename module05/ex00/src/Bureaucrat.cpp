@@ -17,14 +17,12 @@
 
 Bureaucrat::Bureaucrat() : name("Default"), grade(GRADE_LOW) {}
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other)
-    : name(other.name), grade(other.grade)
+Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade(other.grade)
 {
     checkGrade();
 }
 
-Bureaucrat::Bureaucrat(const std::string& name_, unsigned int grade_)
-    : name(name_), grade(grade_)
+Bureaucrat::Bureaucrat(const std::string& name_, unsigned int grade_) : name(name_), grade(grade_)
 {
     checkGrade();
 }
