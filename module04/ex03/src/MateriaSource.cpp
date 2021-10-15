@@ -26,8 +26,7 @@ MateriaSource::MateriaSource(const MateriaSource& other)
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& rhs)
 {
-    if (this == &rhs)
-        return *this;
+    if (this == &rhs) return *this;
 
     for (size_t i = 0; i < 4; ++i) {
         delete materias[i];
@@ -60,9 +59,7 @@ void MateriaSource::learnMateria(AMateria* m)
 AMateria* MateriaSource::createMateria(const std::string& type)
 {
     for (size_t i = 0; i < 4; ++i) {
-        if (materias[i] && materias[i]->getType() == type) {
-            return materias[i]->clone();
-        }
+        if (materias[i] && materias[i]->getType() == type) { return materias[i]->clone(); }
     }
     return NULL;
 }

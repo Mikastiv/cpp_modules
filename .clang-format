@@ -5,6 +5,7 @@
   AlignConsecutiveDeclarations: true,
   AllowShortBlocksOnASingleLine: Empty,
   AllowShortFunctionsOnASingleLine: Inline,
+  AllowShortLoopsOnASingleLine: false,
   AccessModifierOffset: -4,
   BreakBeforeBraces: Linux,
   ColumnLimit : 100,

@@ -32,9 +32,7 @@ void Karen::complain(std::string level)
 {
     size_t index = 0;
     for (; index < 4; ++index) {
-        if (level == levels[index]) {
-            break;
-        }
+        if (level == levels[index]) { break; }
     }
 
     (this->*actions[index])();

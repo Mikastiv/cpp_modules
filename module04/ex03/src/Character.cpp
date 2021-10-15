@@ -35,8 +35,7 @@ Character::Character(const std::string& name_) : name(name_)
 
 Character& Character::operator=(const Character& rhs)
 {
-    if (this == &rhs)
-        return *this;
+    if (this == &rhs) return *this;
 
     name = rhs.getName();
     for (size_t i = 0; i < 4; ++i) {
@@ -74,18 +73,14 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-    if (idx > 3)
-        return;
+    if (idx > 3) return;
 
     materias[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
-    if (idx > 3)
-        return;
+    if (idx > 3) return;
 
-    if (materias[idx]) {
-        materias[idx]->use(target);
-    }
+    if (materias[idx]) { materias[idx]->use(target); }
 }

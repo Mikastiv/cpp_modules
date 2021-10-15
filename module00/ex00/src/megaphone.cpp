@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 01:23:23 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/09 22:27:57 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/14 21:03:33 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,8 @@ int main(int argc, char** argv)
         return 0;
     }
 
-    char* ptr;
     for (int i = 1; i < argc; ++i) {
-        ptr = argv[i];
-        for (; *ptr; ++ptr) {
+        for (char* ptr = argv[i]; *ptr; ++ptr) {
             std::cout << (char)std::toupper(*ptr);
         }
     }

@@ -52,8 +52,7 @@ Fixed::~Fixed() {}
 
 Fixed& Fixed::operator=(const Fixed& rhs)
 {
-    if (&rhs != this)
-        value = rhs.getRawBits();
+    if (&rhs != this) value = rhs.getRawBits();
 
     return *this;
 }

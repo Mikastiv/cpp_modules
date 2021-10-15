@@ -54,8 +54,7 @@ void ClapTrap::attack(const std::string& target) const
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    if (amount > hitpoints)
-        amount = hitpoints;
+    if (amount > hitpoints) amount = hitpoints;
     hitpoints -= amount;
 
     std::cout << "ClapTrap " << name << " took " << amount << " points of damage!\n";
@@ -63,8 +62,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (amount > energy)
-        amount = energy;
+    if (amount > energy) amount = energy;
     energy -= amount;
     hitpoints += amount;
 

@@ -37,8 +37,7 @@ Dog::~Dog()
 
 Dog& Dog::operator=(const Dog& rhs)
 {
-    if (this == &rhs)
-        return *this;
+    if (this == &rhs) return *this;
 
     type = rhs.type;
     for (size_t i = 0; i < 100; ++i) {
