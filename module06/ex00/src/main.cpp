@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 23:30:25 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/15 01:29:56 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/15 01:35:19 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ bool is_number(const std::string& str, long* num)
     char* extra = new char[str.length()];
     int   count1 = std::sscanf(str.c_str(), "%ld.%ldf%s", num, &dec, extra);
     int   count2 = std::sscanf(str.c_str(), "%ld%s", num, extra);
+    delete[] extra;
 
     return only_legal_chars(str) && !(count1 == 3 || (count1 != 2 && count2 == 2));
 }
