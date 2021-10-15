@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include <cstdint>
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 
 typedef struct {
     const char* msg;
