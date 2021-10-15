@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 19:39:07 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/07 13:11:11 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/14 20:24:48 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ public:
     void               incrementGrade();
     void               decrementGrade();
     void               signForm(Form& form) const;
+    void               executeForm(const Form& form) const;
 
     class GradeTooHighException : public std::exception
     {

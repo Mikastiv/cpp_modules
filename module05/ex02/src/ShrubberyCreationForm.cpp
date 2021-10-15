@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 18:44:38 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/14 15:56:25 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/14 20:28:41 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 #include <fstream>
 
-#define DEFAULT_NAME "Shrubbery"
+#define DEFAULT_NAME "Shrubbery creation form"
 #define SIGN_GRADE 145
 #define EXEC_GRADE 137
+#define N_TREES 5
 
 ShrubberyCreationForm::ShrubberyCreationForm()
     : Form(DEFAULT_NAME, "Default", SIGN_GRADE, EXEC_GRADE)
@@ -42,9 +43,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 void ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 {
-    if (getExecGrade() < executor.getGrade()) throw Form::GradeTooLowException();
+    checkExecution(executor);
 
-    std::ofstream file(getTarget() + "_shrubbery");
+    std::ofstream file((getTarget() + "_shrubbery").c_str());
 
     if (file.is_open()) {
         for (int i = 0; i < 5; ++i) {
@@ -77,7 +78,10 @@ void ShrubberyCreationForm::execute(const Bureaucrat& executor) const
                  << "                              ;%@@@@%%:;;;.\n"
                  << "                          ...;%@@@@@%%:;;;;,..";
 
-            if (i < 4) file << "\n";
+            if (i < N_TREES)
+                file << "\n\n";
+            else
+                file << "\n";
         }
     }
 }

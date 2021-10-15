@@ -6,13 +6,13 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 22:08:59 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/14 14:59:31 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/14 20:28:22 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-#define DEFAULT_NAME "Presidential"
+#define DEFAULT_NAME "Presidential pardon form"
 #define SIGN_GRADE 25
 #define EXEC_GRADE 5
 
@@ -40,5 +40,7 @@ PresidentialPardonForm::~PresidentialPardonForm() {}
 
 void PresidentialPardonForm::execute(const Bureaucrat& executor) const
 {
-    if (getExecGrade() < executor.getGrade()) throw Form::GradeTooLowException();
+    checkExecution(executor);
+
+    std::cout << getTarget() << " has been pardoned by Zafod Beeblebrox\n";
 }

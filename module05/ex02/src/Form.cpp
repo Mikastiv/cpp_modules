@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 13:56:24 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/14 13:55:33 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/14 20:21:19 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,11 @@ void Form::beSigned(const Bureaucrat& bureaucrat)
 {
     if (bureaucrat.getGrade() > sign_grade) throw Form::GradeTooLowException();
     is_signed = true;
+}
+
+void Form::checkExecution(const Bureaucrat& executor) const
+{
+    if (getExecGrade() < executor.getGrade()) throw Form::GradeTooLowException();
 }
 
 void Form::checkGrades() const
