@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 21:59:51 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/14 20:28:34 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/14 20:49:44 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,9 @@ void RobotomyRequestForm::execute(const Bureaucrat& executor) const
 {
     checkExecution(executor);
 
-    time_t now = time(NULL);
-    srand((unsigned int)now);
-
     std::cout << "* Drilling noises *\n";
 
-    if (rand() % 2) {
+    if (rand() % 2 == 0) {
         std::cout << getTarget() << " has been robotomized successfully\n";
     } else {
         std::cout << getTarget() << "'s robotomy has failed\n";

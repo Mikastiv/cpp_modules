@@ -6,9 +6,11 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 19:25:46 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/14 20:29:27 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/14 20:52:09 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <cstdlib>
 
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -53,13 +55,13 @@ int main()
         std::cout << e.what() << "\n";
     }
 
-    Bureaucrat test("Jack", 105);
+    Bureaucrat test("Jack", 150);
     Bureaucrat test1("Jim", 35);
     Bureaucrat test2("Joe", 1);
 
-    ShrubberyCreationForm  f("random");
-    RobotomyRequestForm    f1("random");
-    PresidentialPardonForm f2("test");
+    ShrubberyCreationForm  f("home");
+    RobotomyRequestForm    f1("dog");
+    PresidentialPardonForm f2("Amazon");
 
     try {
         test.signForm(f);
@@ -80,7 +82,17 @@ int main()
         std::cout << e.what() << "\n";
     }
 
-    f.execute(test);
-    f1.execute(test2);
+    srand((unsigned int)time(NULL));
+
+    test.executeForm(f);
     test.executeForm(f1);
+    test.executeForm(f2);
+
+    test1.executeForm(f);
+    test1.executeForm(f1);
+    test1.executeForm(f2);
+
+    test2.executeForm(f);
+    test2.executeForm(f1);
+    test2.executeForm(f2);
 }
