@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 23:30:25 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/15 01:54:50 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/15 01:56:26 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,9 @@ int main(int argc, char** argv)
     }
 
     std::string input(argv[1]);
-    long        num = std::numeric_limits<long>::max();
-    bool        impossible = !is_number(input, &num) || num > std::numeric_limits<char>::max() ||
+
+    long num = std::numeric_limits<long>::max();
+    bool impossible = !is_number(input, &num) || num > std::numeric_limits<char>::max() ||
                       num < std::numeric_limits<char>::min();
     if (impossible) {
         std::cout << "char: impossible\n";
@@ -83,6 +84,7 @@ int main(int argc, char** argv)
     if (input[input.length() - 1] == 'f' && input.find('.') != std::string::npos) {
         input.erase(input.end() - 1);
     }
+
     float f = std::strtof(input.c_str(), &end);
     if (*end != '\0' || input.find('.') == input.length() - 1 || input.find('.') == 0) {
         std::cout << "float: impossible\n";
