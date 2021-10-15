@@ -6,9 +6,11 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 22:08:30 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/14 14:54:18 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/14 21:36:34 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #include "Form.hpp"
 

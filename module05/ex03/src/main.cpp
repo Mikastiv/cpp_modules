@@ -6,93 +6,54 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 19:25:46 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/14 20:52:09 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/14 22:11:01 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
 
+#include "Bureaucrat.hpp"
+#include "Intern.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
 int main()
 {
-    try {
-        Bureaucrat c("Exception", 0);
-    } catch (std::exception& e) {
-        std::cout << e.what() << "\n";
-    }
-
-    try {
-        Bureaucrat c("Exception", 151);
-    } catch (std::exception& e) {
-        std::cout << e.what() << "\n";
-    }
-
-    Bureaucrat a("John", 1);
-    Bureaucrat b("Joe", 150);
-
-    try {
-        std::cout << a << "\n";
-        a.decrementGrade();
-        std::cout << a << "\n";
-        a.incrementGrade();
-        std::cout << a << std::endl;
-        a.incrementGrade();
-    } catch (std::exception& e) {
-        std::cout << e.what() << "\n";
-    }
-
-    try {
-        std::cout << b << "\n";
-        b.incrementGrade();
-        std::cout << b << "\n";
-        b.decrementGrade();
-        std::cout << b << std::endl;
-        b.decrementGrade();
-    } catch (std::exception& e) {
-        std::cout << e.what() << "\n";
-    }
-
-    Bureaucrat test("Jack", 150);
-    Bureaucrat test1("Jim", 35);
-    Bureaucrat test2("Joe", 1);
-
-    ShrubberyCreationForm  f("home");
-    RobotomyRequestForm    f1("dog");
-    PresidentialPardonForm f2("Amazon");
-
-    try {
-        test.signForm(f);
-    } catch (std::exception& e) {
-        std::cout << e.what() << "\n";
-    }
-
-    try {
-        test1.signForm(f);
-    } catch (std::exception& e) {
-        std::cout << e.what() << "\n";
-    }
-
-    try {
-        test2.signForm(f);
-        std::cout << f << "\n";
-    } catch (std::exception& e) {
-        std::cout << e.what() << "\n";
-    }
-
     srand((unsigned int)time(NULL));
 
-    test.executeForm(f);
-    test.executeForm(f1);
-    test.executeForm(f2);
+    {
+        Intern someRandomIntern;
+        Form*  rrf;
 
-    test1.executeForm(f);
-    test1.executeForm(f1);
-    test1.executeForm(f2);
+        {
+            Bureaucrat b("Jim", 72);
+            Bureaucrat b1("Jake", 45);
+            rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+            b.executeForm(*rrf);
+            b.signForm(*rrf);
+            b1.executeForm(*rrf);
+        }
+        delete rrf;
 
-    test2.executeForm(f);
-    test2.executeForm(f1);
-    test2.executeForm(f2);
+        {
+            Bureaucrat b("Jim", 145);
+            Bureaucrat b1("Jake", 137);
+            rrf = someRandomIntern.makeForm("shrubbery creation", "Homer");
+            b.executeForm(*rrf);
+            b.signForm(*rrf);
+            b1.executeForm(*rrf);
+        }
+        delete rrf;
+
+        {
+            Bureaucrat b("Jim", 6);
+            Bureaucrat b1("Jake", 5);
+            rrf = someRandomIntern.makeForm("presidential pardon", "Mickey");
+            b.executeForm(*rrf);
+            b.signForm(*rrf);
+            b1.executeForm(*rrf);
+        }
+        delete rrf;
+    }
 }

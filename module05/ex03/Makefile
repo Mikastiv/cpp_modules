@@ -6,11 +6,11 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/07 01:14:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/10/14 13:56:54 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/10/14 22:04:14 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	bureaucrat
+NAME		=	intern
 CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -std=c++98
 CC			=	clang++
 RM			=	rm -rf
@@ -20,9 +20,9 @@ SRC			=	src
 OBJ			=	obj
 
 HFILES		=	Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp\
-				PresidentialPardonForm.hpp
+				PresidentialPardonForm.hpp Intern.hpp
 CFILES		=	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp\
-				PresidentialPardonForm.cpp
+				PresidentialPardonForm.cpp Intern.cpp
 OFILES		=	$(CFILES:.cpp=.o)
 INCS		=	$(addprefix $(INC)/, $(HFILES))
 SRCS		=	$(addprefix $(SRC)/, $(CFILES))

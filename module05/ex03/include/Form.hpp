@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 13:55:38 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/14 20:21:10 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/14 21:59:35 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
     Form(const std::string& name, const std::string& target, unsigned int sign_grade,
         unsigned int exec_grade);
     Form& operator=(const Form&);
-    ~Form();
+    virtual ~Form();
 
     virtual void execute(const Bureaucrat& executor) const = 0;
 
