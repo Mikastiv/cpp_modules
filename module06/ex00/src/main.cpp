@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 23:30:25 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/15 01:35:19 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/15 01:54:50 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,10 @@ bool only_legal_chars(const std::string& str)
 
 bool is_number(const std::string& str, long* num)
 {
-    long  dec;
-    char* extra = new char[str.length()];
-    int   count1 = std::sscanf(str.c_str(), "%ld.%ldf%s", num, &dec, extra);
-    int   count2 = std::sscanf(str.c_str(), "%ld%s", num, extra);
-    delete[] extra;
+    long dec;
+    char c;
+    int  count1 = std::sscanf(str.c_str(), "%ld.%ldf%c%*s", num, &dec, &c);
+    int  count2 = std::sscanf(str.c_str(), "%ld%c%*s", num, &c);
 
     return only_legal_chars(str) && !(count1 == 3 || (count1 != 2 && count2 == 2));
 }
@@ -85,14 +84,14 @@ int main(int argc, char** argv)
         input.erase(input.end() - 1);
     }
     float f = std::strtof(input.c_str(), &end);
-    if (*end != '\0' || input.find('.') == input.length() - 1) {
+    if (*end != '\0' || input.find('.') == input.length() - 1 || input.find('.') == 0) {
         std::cout << "float: impossible\n";
     } else {
         std::cout << std::fixed << std::setprecision(1) << "float: " << f << "f\n";
     }
 
     double d = std::strtod(input.c_str(), &end);
-    if (*end != '\0' || input.find('.') == input.length() - 1) {
+    if (*end != '\0' || input.find('.') == input.length() - 1 || input.find('.') == 0) {
         std::cout << "double: impossible\n";
     } else {
         std::cout << std::fixed << std::setprecision(1) << "double: " << d << "\n";
