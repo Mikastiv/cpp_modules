@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 04:21:24 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 12:52:14 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/15 12:46:55 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ void Phonebook::add()
     std::string secret;
 
     std::cout << "Enter first name> " << std::flush;
-    std::cin >> first;
+    std::getline(std::cin, first);
     std::cout << "Enter last name> " << std::flush;
-    std::cin >> last;
+    std::getline(std::cin, last);
     std::cout << "Enter nickname> " << std::flush;
-    std::cin >> nick;
-    std::cout << "Enter phone number> " << std::flush;
-    std::cin >> phone;
+    std::getline(std::cin, nick);
+    std::cout << "Enter phone> " << std::flush;
+    std::getline(std::cin, phone);
     std::cout << "Enter darkest secret> " << std::flush;
-    std::cin >> secret;
+    std::getline(std::cin, secret);
 
     add_contact(Contact(first, last, nick, phone, secret));
 }
@@ -73,4 +73,5 @@ void Phonebook::search() const
         std::cin >> index;
     }
     contacts[index].print_full();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
