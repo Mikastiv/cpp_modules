@@ -6,7 +6,7 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/07 01:14:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/10/14 23:28:46 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/10/15 02:51:15 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ INC			=	include
 SRC			=	src
 OBJ			=	obj
 
-HFILES		=	
+HFILES		=
 CFILES		=	main.cpp
 OFILES		=	$(CFILES:.cpp=.o)
 INCS		=	$(addprefix $(INC)/, $(HFILES))
