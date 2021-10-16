@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 23:30:25 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/15 20:53:39 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/15 21:05:48 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,31 +55,43 @@ int main()
         int a = 10;
         int b = 20;
 
-        const int& ans = min(a, b);
-        print_result(a, b, ans, "----- Min -----");
+        print_result(a, b, min(a, b), "----- Min -----");
     }
 
     {
         float a = 10;
         float b = 10;
 
-        const float& ans = min(a, b);
-        print_result(a, b, ans, "----- Min -----");
+        print_result(a, b, min(a, b), "----- Min -----");
     }
 
     {
         int a = 10;
         int b = 20;
 
-        const int& ans = max(a, b);
-        print_result(a, b, ans, "----- Max -----");
+        print_result(a, b, max(a, b), "----- Max -----");
     }
 
     {
         float a = 10;
         float b = 10;
 
-        const float& ans = max(a, b);
-        print_result(a, b, ans, "----- Max -----");
+        print_result(a, b, max(a, b), "----- Max -----");
     }
+
+    int a = 2;
+    int b = 3;
+
+    ::swap(a, b);
+    std::cout << "\na = " << a << ", b = " << b << std::endl;
+    std::cout << "min( a, b ) = " << ::min(a, b) << std::endl;
+    std::cout << "max( a, b ) = " << ::max(a, b) << std::endl;
+
+    std::string c = "chaine1";
+    std::string d = "chaine2";
+
+    ::swap(c, d);
+    std::cout << "c = " << c << ", d = " << d << std::endl;
+    std::cout << "min( c, d ) = " << ::min(c, d) << std::endl;
+    std::cout << "max( c, d ) = " << ::max(c, d) << std::endl;
 }
