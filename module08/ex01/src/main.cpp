@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 02:22:49 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/16 12:49:04 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/16 13:21:25 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,15 @@ int main()
         } catch (const std::exception& e) {
             std::cout << e.what() << "\n";
         }
+
+        Span s2(s);
+        Span s3;
+
+        s3 = s2;
+
+        s3.addNumber(1);
+        s3.addNumber(8);
+
+        std::cout << s3.longestSpan() << "\n";
     }
 }
