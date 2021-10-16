@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 02:22:49 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/16 02:44:42 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/16 02:49:10 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ int main()
 
         std::cout << sp.shortestSpan() << std::endl;
         std::cout << sp.longestSpan() << std::endl;
+
+        try {
+            sp.addNumber(10);
+        } catch (const std::exception& e) {
+            std::cout << e.what() << "\n";
+        }
     }
 
     {
@@ -45,5 +51,35 @@ int main()
         s.addNumbers(v.begin(), v.end());
         std::cout << s.shortestSpan() << "\n";
         std::cout << s.longestSpan() << "\n";
+    }
+
+    {
+        Span s(10);
+
+        try {
+            s.shortestSpan();
+        } catch (const std::exception& e) {
+            std::cout << e.what() << "\n";
+        }
+
+        try {
+            s.longestSpan();
+        } catch (const std::exception& e) {
+            std::cout << e.what() << "\n";
+        }
+
+		s.addNumber(5);
+
+		try {
+            s.shortestSpan();
+        } catch (const std::exception& e) {
+            std::cout << e.what() << "\n";
+        }
+
+        try {
+            s.longestSpan();
+        } catch (const std::exception& e) {
+            std::cout << e.what() << "\n";
+        }
     }
 }

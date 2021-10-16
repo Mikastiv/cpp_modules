@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 01:38:48 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/16 02:43:31 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/16 02:48:47 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,10 +90,10 @@ const char* Span::NoSpaceException::what() const throw()
 
 const char* Span::NoShortSpanException::what() const throw()
 {
-    return "No short Span";
+    return "No short span";
 }
 
 const char* Span::NoLongSpanException::what() const throw()
 {
-    return "No long Span";
+    return "No long span";
 }
