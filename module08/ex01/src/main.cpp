@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 02:22:49 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/16 02:49:10 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/16 12:49:04 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,9 @@ int main()
             std::cout << e.what() << "\n";
         }
 
-		s.addNumber(5);
+        s.addNumber(5);
 
-		try {
+        try {
             s.shortestSpan();
         } catch (const std::exception& e) {
             std::cout << e.what() << "\n";

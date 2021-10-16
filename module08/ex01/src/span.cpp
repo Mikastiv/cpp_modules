@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 01:38:48 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/16 02:48:47 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/16 12:49:55 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,6 @@ void Span::addNumbers(iterator begin, iterator end)
     }
 }
 
-static int abs_it(int n)
-{
-    return std::abs(n);
-}
-
 int Span::shortestSpan() const
 {
     if (v.size() <= 1)
@@ -68,7 +63,8 @@ int Span::shortestSpan() const
 
     std::vector<int> diffs(v.size());
     std::adjacent_difference(v.begin(), v.end(), diffs.begin());
-    std::transform(diffs.begin(), diffs.end(), diffs.begin(), abs_it);
+    int (*iabs)(int) = &std::abs;
+    std::transform(diffs.begin(), diffs.end(), diffs.begin(), iabs);
     return *std::min_element(diffs.begin() + 1, diffs.end());
 }
 
@@ -79,7 +75,8 @@ int Span::longestSpan() const
 
     std::vector<int> diffs(v.size());
     std::adjacent_difference(v.begin(), v.end(), diffs.begin());
-    std::transform(diffs.begin(), diffs.end(), diffs.begin(), abs_it);
+    int (*iabs)(int) = &std::abs;
+    std::transform(diffs.begin(), diffs.end(), diffs.begin(), iabs);
     return *std::max_element(diffs.begin() + 1, diffs.end());
 }
 
