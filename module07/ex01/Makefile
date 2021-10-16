@@ -6,11 +6,11 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/07 01:14:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/10/15 21:11:51 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/10/15 23:17:29 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	template
+NAME		=	iter
 CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -std=c++98
 CC			=	clang++
 RM			=	rm -rf

@@ -6,11 +6,11 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/07 01:14:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/10/15 23:17:56 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/10/16 00:28:06 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	array
+NAME		=	easyfind
 CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -std=c++98
 CC			=	clang++
 RM			=	rm -rf
@@ -19,7 +19,7 @@ INC			=	include
 SRC			=	src
 OBJ			=	obj
 
-HFILES		=	Array.hpp
+HFILES		=	easyfind.hpp
 CFILES		=	main.cpp
 OFILES		=	$(CFILES:.cpp=.o)
 INCS		=	$(addprefix $(INC)/, $(HFILES))
