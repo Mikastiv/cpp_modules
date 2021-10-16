@@ -6,13 +6,14 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:34:06 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/15 22:12:34 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/16 01:24:03 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <cstring>
+#include <sstream>
 #include <stdexcept>
 
 template <typename T>
@@ -27,8 +28,6 @@ public:
         elems = new T[size()]();
         std::memcpy(elems, other.elems, size() * sizeof(T));
     };
-    ~Array() { delete[] elems; };
-
     Array& operator=(const Array& rhs)
     {
         delete[] elems;
@@ -38,10 +37,16 @@ public:
 
         return *this;
     };
+    ~Array() { delete[] elems; };
+
     T& operator[](std::size_t idx)
     {
-        if (idx >= size())
-            throw std::out_of_range("Index is out of bounds");
+        if (idx >= size()) {
+            std::stringstream ss;
+
+            ss << "Index " << idx << " is out of bounds";
+            throw std::out_of_range(ss.str());
+        }
 
         return elems[idx];
     }

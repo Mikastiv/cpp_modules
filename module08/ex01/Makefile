@@ -6,12 +6,12 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/07 01:14:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/10/16 01:09:10 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/10/16 01:01:31 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	array
-CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wshadow -std=c++98
+NAME		=	span
+CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -std=c++98
 CC			=	clang++
 RM			=	rm -rf
 
@@ -19,8 +19,8 @@ INC			=	include
 SRC			=	src
 OBJ			=	obj
 
-HFILES		=	Array.hpp
-CFILES		=	main.cpp
+HFILES		=	span.hpp
+CFILES		=	main.cpp span.cpp
 OFILES		=	$(CFILES:.cpp=.o)
 INCS		=	$(addprefix $(INC)/, $(HFILES))
 SRCS		=	$(addprefix $(SRC)/, $(CFILES))
