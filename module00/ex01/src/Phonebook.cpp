@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 04:21:24 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/15 12:46:55 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/18 17:15:12 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,24 @@ void Phonebook::add()
 
     std::cout << "Enter first name> " << std::flush;
     std::getline(std::cin, first);
+    if (std::cin.eof())
+        return;
     std::cout << "Enter last name> " << std::flush;
     std::getline(std::cin, last);
+    if (std::cin.eof())
+        return;
     std::cout << "Enter nickname> " << std::flush;
     std::getline(std::cin, nick);
+    if (std::cin.eof())
+        return;
     std::cout << "Enter phone> " << std::flush;
     std::getline(std::cin, phone);
+    if (std::cin.eof())
+        return;
     std::cout << "Enter darkest secret> " << std::flush;
     std::getline(std::cin, secret);
+    if (std::cin.eof())
+        return;
 
     add_contact(Contact(first, last, nick, phone, secret));
 }
@@ -67,6 +77,8 @@ void Phonebook::search() const
     std::cout << "Choose an index> " << std::flush;
     std::cin >> index;
     while (!std::cin.good() || index >= size) {
+        if (std::cin.eof())
+            return;
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Bad index\nChoose an index> " << std::flush;
