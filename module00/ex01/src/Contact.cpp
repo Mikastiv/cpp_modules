@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 04:15:41 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/18 17:01:37 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/19 18:07:58 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void Contact::print_column(size_t index) const
     std::string last = lastname.length() > 10 ? lastname.substr(0, 9) + "." : lastname;
     std::string nick = nickname.length() > 10 ? nickname.substr(0, 9) + "." : nickname;
 
-    std::cout << std::setw(10) << std::left << index << '|';
+    std::cout << std::setw(10) << index << '|';
     std::cout << std::setw(10) << first << '|';
     std::cout << std::setw(10) << last << '|';
     std::cout << std::setw(10) << nick << std::endl;
