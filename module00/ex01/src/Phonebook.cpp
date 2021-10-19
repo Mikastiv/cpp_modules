@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 04:21:24 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/19 01:01:23 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/19 18:14:17 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,13 @@ void Phonebook::search() const
         return;
     }
 
-    std::cout << "-------------------------------------------\n";
-    std::cout << "Index     |First name|Last name |Nickname\n";
-    std::cout << "-------------------------------------------\n";
+    std::cout << "|-------------------------------------------|\n";
+    std::cout << "|Index     |First name|Last name |Nickname  |\n";
+    std::cout << "|-------------------------------------------|\n";
     for (size_t i = 0; i < size; ++i) {
         contacts[i].print_column(i);
     }
-    std::cout << "-------------------------------------------" << std::endl;
+    std::cout << "|-------------------------------------------|" << std::endl;
 
     size_t index = 0;
     std::cout << "Choose an index> " << std::flush;
