@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 04:03:21 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/08 03:07:15 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/19 01:00:52 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ const size_t PB_SIZE = 8;
 class Phonebook
 {
 public:
+    Phonebook();
+
     void add();
     void search() const;
 

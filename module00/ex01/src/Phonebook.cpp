@@ -6,13 +6,15 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 04:21:24 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/18 17:15:12 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/19 01:01:23 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 
 #include <limits>
+
+Phonebook::Phonebook() : size(0), oldest(0) {}
 
 void Phonebook::add()
 {

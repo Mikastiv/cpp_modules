@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 02:19:04 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/18 17:14:20 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/19 00:58:39 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main(void)
         } else if (std::cin.eof()) {
             continue;
         } else {
-            std::cerr << "\nError: Invalid command\n";
+            std::cerr << "Error: Invalid command\n\n";
         }
     }
 }
