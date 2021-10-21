@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 21:01:59 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/08 02:43:41 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:57:29 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 #include <ctime>
 #include <iostream>
+
+int Account::_nbAccounts = 0;
+int Account::_totalAmount = 0;
+int Account::_totalNbDeposits = 0;
+int Account::_totalNbWithdrawals = 0;
 
 int Account::getNbAccounts()
 {
@@ -120,8 +125,3 @@ void Account::_displayTimestamp()
     strftime(buffer, 32, "[%Y%m%d_%H%M%S] ", local);
     std::cout << buffer;
 }
-
-int Account::_nbAccounts = 0;
-int Account::_totalAmount = 0;
-int Account::_totalNbDeposits = 0;
-int Account::_totalNbWithdrawals = 0;
