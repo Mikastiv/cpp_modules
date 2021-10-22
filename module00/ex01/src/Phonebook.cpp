@@ -6,13 +6,13 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 04:21:24 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/19 18:14:17 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/21 17:58:19 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 
-#include <limits>
+#include <cctype>
 
 Phonebook::Phonebook() : size(0), oldest(0) {}
 
@@ -60,6 +60,16 @@ void Phonebook::add_contact(Contact contact)
     }
 }
 
+bool all_numbers(const std::string& str)
+{
+    for (size_t i = 0; i < str.length(); ++i) {
+        if (!std::isdigit(str[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+
 void Phonebook::search() const
 {
     if (size == 0) {
@@ -68,24 +78,26 @@ void Phonebook::search() const
     }
 
     std::cout << "|-------------------------------------------|\n";
-    std::cout << "|Index     |First name|Last name |Nickname  |\n";
+    std::cout << "|     Index|First name| Last name|  Nickname|\n";
     std::cout << "|-------------------------------------------|\n";
     for (size_t i = 0; i < size; ++i) {
         contacts[i].print_column(i);
     }
     std::cout << "|-------------------------------------------|" << std::endl;
 
-    size_t index = 0;
+    size_t      index = 0;
+    std::string line;
     std::cout << "Choose an index> " << std::flush;
-    std::cin >> index;
-    while (!std::cin.good() || index >= size) {
-        if (std::cin.eof())
-            return;
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "Bad index\nChoose an index> " << std::flush;
-        std::cin >> index;
+    std::getline(std::cin, line);
+    if (!std::cin.good() || !all_numbers(line)) {
+        std::cout << "Bad index\n\n";
+        return;
     }
+    index = std::stoul(line);
+    if (index >= size) {
+        std::cout << "Bad index\n\n";
+        return;
+    }
+
     contacts[index].print_full();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
