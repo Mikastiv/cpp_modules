@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 04:21:24 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/21 17:58:19 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/22 18:31:58 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void Phonebook::search() const
     }
     std::cout << "|-------------------------------------------|" << std::endl;
 
-    size_t      index = 0;
+    long        index = 0;
     std::string line;
     std::cout << "Choose an index> " << std::flush;
     std::getline(std::cin, line);
@@ -93,8 +93,8 @@ void Phonebook::search() const
         std::cout << "Bad index\n\n";
         return;
     }
-    index = std::stoul(line);
-    if (index >= size) {
+    index = std::atol(line.c_str());
+    if (index >= (long)size) {
         std::cout << "Bad index\n\n";
         return;
     }
