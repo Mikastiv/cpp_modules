@@ -6,13 +6,15 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 09:10:01 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 01:33:50 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/25 20:34:05 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 #include <iostream>
+
+const int Fixed::frac_bits = 8;
 
 Fixed::Fixed() : value(0)
 {
@@ -50,5 +52,3 @@ void Fixed::setRawBits(const int raw)
 {
     value = raw;
 }
-
-const int Fixed::frac_bits = 8;
