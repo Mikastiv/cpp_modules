@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 15:41:45 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/09 05:56:20 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/25 20:13:56 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,6 @@ Karen::Karen()
     levels[1] = "INFO";
     levels[2] = "WARNING";
     levels[3] = "ERROR";
-
-    actions[0] = &Karen::debug;
-    actions[1] = &Karen::info;
-    actions[2] = &Karen::warning;
-    actions[3] = &Karen::error;
-    actions[4] = &Karen::insignificant;
 }
 
 void Karen::complain(std::string level)
@@ -37,7 +31,22 @@ void Karen::complain(std::string level)
         }
     }
 
-    (this->*actions[index])();
+    switch (index) {
+        case 0:
+            debug();
+            break;
+        case 1:
+            info();
+            break;
+        case 2:
+            warning();
+            break;
+        case 3:
+            error();
+            break;
+        default:
+            insignificant();
+    }
 }
 
 void Karen::debug()

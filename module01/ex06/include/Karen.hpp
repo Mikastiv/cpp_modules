@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 15:36:15 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/09 05:55:46 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/25 20:13:52 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ private:
 
 private:
     std::string levels[4];
-    void (Karen::*actions[5])();
 };
