@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 15:41:45 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/25 20:13:56 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/10/27 19:13:46 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,10 @@ void Karen::complain(std::string level)
     switch (index) {
         case 0:
             debug();
-            break;
         case 1:
             info();
-            break;
         case 2:
             warning();
-            break;
         case 3:
             error();
             break;
