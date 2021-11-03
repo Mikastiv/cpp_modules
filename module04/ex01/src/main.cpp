@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 21:53:28 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/11 23:31:33 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/03 15:36:58 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,10 @@ int main()
 
     b = a;
     e = d;
+
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+
+    delete j;
+    delete i;
 }

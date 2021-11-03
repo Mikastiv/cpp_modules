@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 21:46:17 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/11 23:37:50 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/03 15:42:49 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,4 @@ Animal& Animal::operator=(const Animal& rhs)
     type = rhs.type;
 
     return *this;
-}
-
-void Animal::makeSound() const
-{
-    std::cout << "Animal noise\n";
 }

@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 06:36:51 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/12 06:52:07 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/03 15:58:58 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void MateriaSource::learnMateria(AMateria* m)
 {
     for (size_t i = 0; i < 4; ++i) {
         if (!materias[i]) {
-            materias[i] = m;
+            materias[i] = m->clone();
             break;
         }
     }

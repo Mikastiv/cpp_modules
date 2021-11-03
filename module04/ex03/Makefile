@@ -6,11 +6,11 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/07 01:14:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/09/12 07:01:31 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/11/03 15:46:52 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	a.out
+NAME		=	materia
 CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -std=c++98 -g -fno-limit-debug-info
 CC			=	clang++
 RM			=	rm -rf

@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 06:07:30 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/12 07:02:47 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/03 15:45:26 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@
 
 #include "ICharacter.hpp"
 
-Cure::Cure() : AMateria()
-{
-    type = "cure";
-}
+Cure::Cure() : AMateria("cure") {}
 
 Cure::Cure(const Cure& other)
 {
