@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 22:43:55 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/10 02:13:52 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/03 09:15:37 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ Fixed formula(const Point a, const Point b, const Point c)
 
 bool bsp(const Point a, const Point b, const Point c, const Point point)
 {
+    if (a == b || a == c | b == c) {
+        return false;
+    }
+
     Fixed denom = formula(a, b, c);
     Fixed p1 = formula(point, b, c) / denom;
     Fixed p2 = formula(point, c, a) / denom;

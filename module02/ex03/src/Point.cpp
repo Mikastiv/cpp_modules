@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 23:04:01 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/11/01 13:27:42 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/03 09:17:01 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ Point::~Point() {}
 Point& Point::operator=(const Point&)
 {
     return *this;
+}
+
+bool Point::operator==(const Point& rhs) const
+{
+    return x == rhs.x && y == rhs.y;
 }
 
 Fixed Point::getX() const
