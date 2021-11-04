@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 21:40:10 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/11 22:21:01 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/04 17:01:20 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 
     WrongAnimal& operator=(const WrongAnimal&);
 
-    virtual void makeSound() const;
+    void makeSound() const;
 
 protected:
     std::string type;
