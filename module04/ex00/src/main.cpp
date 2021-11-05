@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 21:53:28 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/09/11 22:54:49 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/05 05:53:26 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,8 @@ int main()
     i.makeSound();
     wmeta.makeSound();
     wcat.makeSound();
+
+    const WrongAnimal* ptr = new WrongCat();
+    ptr->makeSound();
+    delete ptr;
 }
