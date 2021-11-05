@@ -1,6 +1,8 @@
 .vscode/*
 */.vscode/*
 *.o
+*.idx
+compile_commands.json
 megaphone
 phonebook
 tests
