@@ -2,6 +2,7 @@
 */.vscode/*
 *.o
 *.idx
+*.dSYM
 compile_commands.json
 megaphone
 phonebook
