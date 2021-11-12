@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 22:08:30 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/14 21:36:17 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/12 00:42:55 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
     PresidentialPardonForm(const PresidentialPardonForm&);
     PresidentialPardonForm(const std::string& target);
     PresidentialPardonForm& operator=(const PresidentialPardonForm&);
-    ~PresidentialPardonForm();
+    virtual ~PresidentialPardonForm();
 
     virtual void execute(const Bureaucrat& executor) const;
 };

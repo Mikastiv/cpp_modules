@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 13:55:38 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/14 21:59:35 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/12 00:41:54 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ public:
     unsigned int       getSignGrade() const;
     unsigned int       getExecGrade() const;
     bool               isSigned() const;
-    void               checkExecution(const Bureaucrat& executor) const;
     void               beSigned(const Bureaucrat& bureaucrat);
 
     class GradeTooHighException : public std::exception
@@ -45,6 +44,9 @@ public:
     public:
         virtual const char* what() const throw();
     };
+
+protected:
+    void checkExecution(const Bureaucrat& executor) const;
 
 private:
     const std::string  name;

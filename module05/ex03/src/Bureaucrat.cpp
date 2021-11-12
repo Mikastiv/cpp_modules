@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 19:42:24 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/14 20:27:14 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/12 00:50:02 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ void Bureaucrat::executeForm(const Form& form) const
         form.execute(*this);
         std::cout << name << " executes " << form.getName() << "\n";
     } catch (const std::exception& e) {
-        std::cout << name << " failed to execute " << form.getName() << "\n";
+        std::cout << name << " failed to execute " << form.getName() << " because " << e.what()
+                  << "\n";
     }
 }
 

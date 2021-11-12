@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 21:59:00 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/14 21:36:21 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/12 00:42:54 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
     RobotomyRequestForm(const RobotomyRequestForm&);
     RobotomyRequestForm(const std::string& target);
     RobotomyRequestForm& operator=(const RobotomyRequestForm&);
-    ~RobotomyRequestForm();
+    virtual ~RobotomyRequestForm();
 
     virtual void execute(const Bureaucrat& executor) const;
 };
