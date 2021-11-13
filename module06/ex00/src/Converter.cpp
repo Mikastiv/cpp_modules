@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 20:36:08 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/11/12 22:27:46 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/12 22:45:57 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,7 @@ std::string Converter::to_char() const
     bool too_big = num_int > std::numeric_limits<char>::max();
     bool too_small = num_int < std::numeric_limits<char>::min();
 
-    if (error) {
-        return "char: impossible";
-    }
-    if (type != TypeChar && (too_big || too_small)) {
+    if (error || too_big || too_small) {
         return "char: impossible";
     }
     if (!std::isprint(static_cast<int>(c))) {
@@ -89,10 +86,7 @@ std::string Converter::to_int() const
     bool too_big = num_int > std::numeric_limits<int>::max();
     bool too_small = num_int < std::numeric_limits<int>::min();
 
-    if (error) {
-        return "int: impossible";
-    }
-    if (type != TypeInt && (too_big || too_small)) {
+    if (error || too_big || too_small) {
         return "int: impossible";
     }
     if (type == TypeFloat || type == TypeDouble) {
