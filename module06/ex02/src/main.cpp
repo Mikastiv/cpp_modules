@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 23:30:25 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/15 03:29:15 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/12 22:37:54 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,19 @@ Base* generate()
 void identify(Base* p)
 {
     try {
-        static_cast<void>(dynamic_cast<A*>(p));
+        static_cast<void>(dynamic_cast<A&>(*p));
         std::cout << "A\n";
         return;
     } catch (std::exception&) {
     }
     try {
-        static_cast<void>(dynamic_cast<B*>(p));
+        static_cast<void>(dynamic_cast<B&>(*p));
         std::cout << "B\n";
         return;
     } catch (std::exception&) {
     }
     try {
-        static_cast<void>(dynamic_cast<C*>(p));
+        static_cast<void>(dynamic_cast<C&>(*p));
         std::cout << "C\n";
         return;
     } catch (std::exception&) {
@@ -89,5 +89,9 @@ int main()
         Base* ptr = generate();
         identify(ptr);
         identify(*ptr);
+
+        if (i < 4) {
+            std::cout << "\n";
+        }
     }
 }
