@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 20:36:08 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/11/12 22:45:57 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/12 22:48:50 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ std::string Converter::to_char() const
         return "char: Non displayable";
     }
     if (type == TypeFloat || type == TypeDouble) {
-        if (is_pseudo_litteral(value)) {
+        if (numd != numd || numd == std::numeric_limits<double>::infinity()) {
             return "char: impossible";
         }
     }
@@ -90,7 +90,7 @@ std::string Converter::to_int() const
         return "int: impossible";
     }
     if (type == TypeFloat || type == TypeDouble) {
-        if (is_pseudo_litteral(value)) {
+        if (numd != numd || numd == std::numeric_limits<double>::infinity()) {
             return "int: impossible";
         }
     }
