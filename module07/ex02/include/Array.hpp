@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:34:06 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/16 01:24:03 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/12 23:38:18 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,7 @@ class Array
 public:
     Array() : elems(new T[0]()), size_(0U){};
     Array(unsigned int n) : elems(new T[n]), size_(n){};
-    Array(const Array& other)
-    {
-        size_ = other.size();
-        elems = new T[size()]();
-        std::memcpy(elems, other.elems, size() * sizeof(T));
-    };
+    Array(const Array& other) : elems(NULL) { *this = other; };
     Array& operator=(const Array& rhs)
     {
         delete[] elems;
