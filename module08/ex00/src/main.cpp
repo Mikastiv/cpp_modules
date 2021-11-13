@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 00:28:45 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/16 00:42:42 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/13 00:21:20 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,6 @@
 #include <vector>
 
 #include "easyfind.hpp"
-
-template <typename T>
-void test(T container, int n)
-{
-    if (easyfind(container, n))
-        std::cout << n << " found\n";
-    else
-        std::cout << n << " not found\n";
-}
 
 int main()
 {
