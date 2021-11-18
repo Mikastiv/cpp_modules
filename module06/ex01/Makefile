@@ -6,12 +6,12 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/07 01:14:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/10/15 03:02:56 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/11/16 13:55:23 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	serialization
-CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow
+CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -std=c++98
 CC			=	clang++
 RM			=	rm -rf
 

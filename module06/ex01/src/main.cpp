@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 23:30:25 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/10/15 03:03:53 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/16 13:58:22 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ int main()
 
     std::cout << "Raw: 0x" << std::hex << raw << "\n"
               << "Ptr: " << ptr << "\n";
+    std::cout << "Data->msg: " << ptr->msg << "\nData->error: " << ptr->error << "\n";
 }
