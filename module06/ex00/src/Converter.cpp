@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 20:36:08 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/11/12 22:48:50 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/19 18:36:00 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,7 @@ bool is_pseudo_litteral(const std::string& str)
 
 std::string Converter::to_char() const
 {
-    bool too_big = num_int > std::numeric_limits<char>::max();
-    bool too_small = num_int < std::numeric_limits<char>::min();
-
-    if (error || too_big || too_small) {
+    if (error) {
         return "char: impossible";
     }
     if (!std::isprint(static_cast<int>(c))) {
@@ -83,10 +80,7 @@ std::string Converter::to_char() const
 
 std::string Converter::to_int() const
 {
-    bool too_big = num_int > std::numeric_limits<int>::max();
-    bool too_small = num_int < std::numeric_limits<int>::min();
-
-    if (error || too_big || too_small) {
+    if (error) {
         return "int: impossible";
     }
     if (type == TypeFloat || type == TypeDouble) {
@@ -97,7 +91,7 @@ std::string Converter::to_int() const
 
     std::stringstream ss;
 
-    ss << "int: " << static_cast<int>(num_int);
+    ss << "int: " << num_int;
     return ss.str();
 }
 
@@ -164,7 +158,7 @@ void Converter::parse()
             }
         } else {
             type = TypeInt;
-            num_int = std::strtol(value.c_str(), &end, 10);
+            num_int = static_cast<int>(std::strtol(value.c_str(), &end, 10));
 
             if (*end != '\0') {
                 error = true;
@@ -175,7 +169,7 @@ void Converter::parse()
     if (!error) {
         switch (type) {
             case TypeChar: {
-                num_int = static_cast<long>(c);
+                num_int = static_cast<int>(c);
                 numd = static_cast<double>(c);
                 numf = static_cast<float>(c);
                 break;
@@ -190,14 +184,14 @@ void Converter::parse()
 
             case TypeFloat: {
                 c = static_cast<char>(numf);
-                num_int = static_cast<long>(numf);
+                num_int = static_cast<int>(numf);
                 numd = static_cast<double>(numf);
                 break;
             }
 
             case TypeDouble: {
                 c = static_cast<char>(numd);
-                num_int = static_cast<long>(numd);
+                num_int = static_cast<int>(numd);
                 numf = static_cast<float>(numd);
                 break;
             }

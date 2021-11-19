@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 20:31:12 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/11/12 22:17:09 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/11/19 18:35:17 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ private:
 private:
     std::string value;
     char        c;
-    long        num_int;
+    int         num_int;
     double      numd;
     float       numf;
     NumType     type;
