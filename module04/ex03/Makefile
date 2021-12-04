@@ -15,22 +15,16 @@ CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -std=c++98 -g -
 CC			=	clang++
 RM			=	rm -rf
 
-INC			=	include
-SRC			=	src
 OBJ			=	obj
 
-HFILES		=	AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp\
+INCS		=	AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp\
 				IMateriaSource.hpp MateriaSource.hpp
-CFILES		=	main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp
-OFILES		=	$(CFILES:.cpp=.o)
-INCS		=	$(addprefix $(INC)/, $(HFILES))
-SRCS		=	$(addprefix $(SRC)/, $(CFILES))
-OBJS		=	$(addprefix $(OBJ)/, $(OFILES))
+SRCS		=	main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp
+OBJS		=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
-VPATH		=	$(SRC)
 
 $(OBJ)/%.o:	%.cpp
-			$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+			$(CC) $(CFLAGS) -I. -c $< -o $@
 
 $(NAME):	$(OBJ) $(OBJS)
 			$(CC) $(OBJS) -o $(NAME)

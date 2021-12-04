@@ -15,21 +15,15 @@ CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -std=c++98
 CC			=	clang++
 RM			=	rm -rf
 
-INC			=	include
-SRC			=	src
 OBJ			=	obj
 
-HFILES		=	Converter.hpp
-CFILES		=	main.cpp Converter.cpp
-OFILES		=	$(CFILES:.cpp=.o)
-INCS		=	$(addprefix $(INC)/, $(HFILES))
-SRCS		=	$(addprefix $(SRC)/, $(CFILES))
-OBJS		=	$(addprefix $(OBJ)/, $(OFILES))
+INCS		=	Converter.hpp
+SRCS		=	main.cpp Converter.cpp
+OBJS		=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
-VPATH		=	$(SRC)
 
 $(OBJ)/%.o:	%.cpp
-			$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+			$(CC) $(CFLAGS) -I. -c $< -o $@
 
 all:		CFLAGS += -O2
 all:		$(NAME)

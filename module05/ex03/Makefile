@@ -15,23 +15,17 @@ CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -std=c++98
 CC			=	clang++
 RM			=	rm -rf
 
-INC			=	include
-SRC			=	src
 OBJ			=	obj
 
-HFILES		=	Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp\
+INCS		=	Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp\
 				PresidentialPardonForm.hpp Intern.hpp
-CFILES		=	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp\
+SRCS		=	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp\
 				PresidentialPardonForm.cpp Intern.cpp
-OFILES		=	$(CFILES:.cpp=.o)
-INCS		=	$(addprefix $(INC)/, $(HFILES))
-SRCS		=	$(addprefix $(SRC)/, $(CFILES))
-OBJS		=	$(addprefix $(OBJ)/, $(OFILES))
+OBJS		=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
-VPATH		=	$(SRC)
 
 $(OBJ)/%.o:	%.cpp
-			$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+			$(CC) $(CFLAGS) -I. -c $< -o $@
 
 $(NAME):	$(OBJ) $(OBJS)
 			$(CC) $(OBJS) -o $(NAME)
