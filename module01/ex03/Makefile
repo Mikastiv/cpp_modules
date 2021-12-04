@@ -6,7 +6,7 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/07 01:14:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/09/09 05:52:59 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/12/03 21:01:09 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,17 +19,12 @@ INC			=	include
 SRC			=	src
 OBJ			=	obj
 
-HFILES		=	Weapon.hpp HumanA.hpp HumanB.hpp
-CFILES		=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
-OFILES		=	$(CFILES:.cpp=.o)
-INCS		=	$(addprefix $(INC)/, $(HFILES))
-SRCS		=	$(addprefix $(SRC)/, $(CFILES))
-OBJS		=	$(addprefix $(OBJ)/, $(OFILES))
-
-VPATH		=	$(SRC)
+INCS		=	Weapon.hpp HumanA.hpp HumanB.hpp
+SRCS		=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+OBJS		=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
 $(OBJ)/%.o:	%.cpp
-			$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+			$(CC) $(CFLAGS) -I. -c $< -o $@
 
 $(NAME):	$(OBJ) $(OBJS)
 			$(CC) $(OBJS) -o $(NAME)

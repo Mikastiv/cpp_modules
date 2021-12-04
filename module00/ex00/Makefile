@@ -6,7 +6,7 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/07 01:14:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/09/08 05:20:08 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/12/03 20:58:37 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,15 +15,10 @@ CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -std=c++98
 CC			=	clang++
 RM			=	rm -rf
 
-SRC			=	src
 OBJ			=	obj
 
-CFILES		=	megaphone.cpp
-OFILES		=	$(CFILES:.cpp=.o)
-SRCS		=	$(addprefix $(SRC)/, $(CFILES))
-OBJS		=	$(addprefix $(OBJ)/, $(OFILES))
-
-VPATH		=	$(SRC)
+SRCS		=	megaphone.cpp
+OBJS		=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
 $(OBJ)/%.o:	%.cpp
 			$(CC) $(CFLAGS) -c $< -o $@

@@ -6,7 +6,7 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/07 01:14:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/09/09 05:53:30 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/12/03 20:58:41 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,21 +15,14 @@ CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -std=c++98
 CC			=	clang++
 RM			=	rm -rf
 
-INC			=	include
-SRC			=	src
 OBJ			=	obj
 
-HFILES		=	Phonebook.hpp Contact.hpp
-CFILES		=	main.cpp Contact.cpp Phonebook.cpp
-OFILES		=	$(CFILES:.cpp=.o)
-INCS		=	$(addprefix $(INC)/, $(HFILES))
-SRCS		=	$(addprefix $(SRC)/, $(CFILES))
-OBJS		=	$(addprefix $(OBJ)/, $(OFILES))
-
-VPATH		=	$(SRC)
+INCS		=	Phonebook.hpp Contact.hpp
+SRCS		=	main.cpp Contact.cpp Phonebook.cpp
+OBJS		=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
 $(OBJ)/%.o:	%.cpp
-			$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+			$(CC) $(CFLAGS) -I. -c $< -o $@
 
 $(NAME):	$(OBJ) $(OBJS)
 			$(CC) $(OBJS) -o $(NAME)

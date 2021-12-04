@@ -6,7 +6,7 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/07 01:14:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/09/10 12:54:29 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/12/03 20:59:52 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,16 +15,10 @@ CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -std=c++98
 CC			=	clang++
 RM			=	rm -rf
 
-INC			=	include
-SRC			=	src
 OBJ			=	obj
 
-CFILES		=	main.cpp
-OFILES		=	$(CFILES:.cpp=.o)
-SRCS		=	$(addprefix $(SRC)/, $(CFILES))
-OBJS		=	$(addprefix $(OBJ)/, $(OFILES))
-
-VPATH		=	$(SRC)
+SRCS		=	main.cpp
+OBJS		=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
 $(OBJ)/%.o:	%.cpp
 			$(CC) $(CFLAGS) -c $< -o $@
