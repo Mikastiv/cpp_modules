@@ -20,11 +20,6 @@ Point::Point(const float x_, const float y_) : x(x_), y(y_) {}
 
 Point::~Point() {}
 
-Point& Point::operator=(const Point&)
-{
-    return *this;
-}
-
 bool Point::operator==(const Point& rhs) const
 {
     return x == rhs.x && y == rhs.y;

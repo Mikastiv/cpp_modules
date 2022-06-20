@@ -21,12 +21,14 @@ public:
     Point(const Point&);
     Point(const float x, const float y);
     ~Point();
-    Point& operator=(const Point&);
 
     bool operator==(const Point&) const;
 
     Fixed getX() const;
     Fixed getY() const;
+
+private:
+    Point& operator=(const Point&);
 
 private:
     const Fixed x;

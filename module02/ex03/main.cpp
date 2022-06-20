@@ -23,7 +23,6 @@ int main(void)
     std::cout << std::boolalpha << bsp(a, b, c, d) << std::endl;
     std::cout << std::boolalpha << bsp(a, b, c, e) << std::endl;
 
-    e = b;
     std::cout << e.getX() << " " << e.getY() << '\n';
 
     return 0;
