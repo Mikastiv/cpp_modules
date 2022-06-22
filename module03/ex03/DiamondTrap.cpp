@@ -17,9 +17,9 @@
 DiamondTrap::DiamondTrap() : ClapTrap()
 {
     name = "Default";
-    hitpoints = FragTrap::hitpoints;
-    energy = ScavTrap::energy;
-    damage = FragTrap::damage;
+    hitpoints = FragTrap::HITPOINTS;
+    energy = ScavTrap::ENERGY;
+    damage = FragTrap::DAMAGE;
 
     std::cout << "DiamondTrap " << name << " built\n";
 }
@@ -33,9 +33,9 @@ DiamondTrap::DiamondTrap(const DiamondTrap& other) : ClapTrap(other.name)
 
 DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_clap_name"), name(name)
 {
-    hitpoints = FragTrap::hitpoints;
-    energy = ScavTrap::energy;
-    damage = FragTrap::damage;
+    hitpoints = FragTrap::HITPOINTS;
+    energy = ScavTrap::ENERGY;
+    damage = FragTrap::DAMAGE;
 
     std::cout << "DiamondTrap " << name << " built\n";
 }

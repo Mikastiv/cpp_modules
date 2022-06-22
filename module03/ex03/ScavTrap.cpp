@@ -16,9 +16,9 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-    hitpoints = 100;
-    energy = 50;
-    damage = 20;
+    hitpoints = HITPOINTS;
+    energy = ENERGY;
+    damage = DAMAGE;
 
     std::cout << "ScavTrap " << name << " built\n";
 }
@@ -31,9 +31,9 @@ ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other.name)
 }
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 {
-    hitpoints = 100;
-    energy = 50;
-    damage = 20;
+    hitpoints = HITPOINTS;
+    energy = ENERGY;
+    damage = DAMAGE;
 
     std::cout << "ScavTrap " << name << " built\n";
 }

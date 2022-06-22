@@ -24,4 +24,9 @@ public:
     FragTrap& operator=(const FragTrap&);
 
     void highFivesGuys() const;
+
+protected:
+    static const unsigned int HITPOINTS = 100;
+    static const unsigned int ENERGY = 100;
+    static const unsigned int DAMAGE = 30;
 };

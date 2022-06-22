@@ -26,4 +26,9 @@ public:
     void guardGate() const;
 
     virtual void attack(const std::string& target) const;
+
+protected:
+    static const unsigned int HITPOINTS = 100;
+    static const unsigned int ENERGY = 50;
+    static const unsigned int DAMAGE = 20;
 };
