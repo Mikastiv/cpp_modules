@@ -63,24 +63,9 @@ int main()
     RobotomyRequestForm    f1("dog");
     PresidentialPardonForm f2("Amazon");
 
-    try {
-        test.signForm(f);
-    } catch (std::exception& e) {
-        std::cout << e.what() << "\n";
-    }
-
-    try {
-        test1.signForm(f);
-    } catch (std::exception& e) {
-        std::cout << e.what() << "\n";
-    }
-
-    try {
-        test2.signForm(f);
-        std::cout << f << "\n";
-    } catch (std::exception& e) {
-        std::cout << e.what() << "\n";
-    }
+    test.signForm(f);
+    test1.signForm(f);
+    test2.signForm(f);
 
     srand((unsigned int)time(NULL));
 

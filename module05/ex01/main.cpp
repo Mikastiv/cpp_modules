@@ -70,22 +70,7 @@ int main()
     Bureaucrat test1("Jim", 35);
     Bureaucrat test2("Joe", 1);
 
-    try {
-        test.signForm(f);
-    } catch (std::exception& e) {
-        std::cout << e.what() << "\n";
-    }
-
-    try {
-        test1.signForm(f);
-    } catch (std::exception& e) {
-        std::cout << e.what() << "\n";
-    }
-
-    try {
-        test2.signForm(f);
-        std::cout << f << "\n";
-    } catch (std::exception& e) {
-        std::cout << e.what() << "\n";
-    }
+    test.signForm(f);
+    test1.signForm(f);
+    test2.signForm(f);
 }
