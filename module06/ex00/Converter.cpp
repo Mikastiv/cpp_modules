@@ -67,7 +67,8 @@ std::string Converter::to_char() const
         return "char: Non displayable";
     }
     if (type == TypeFloat || type == TypeDouble) {
-        if (numd != numd || numd == std::numeric_limits<double>::infinity()) {
+        if (numd != numd || numd == std::numeric_limits<double>::infinity() ||
+            numd == -std::numeric_limits<double>::infinity()) {
             return "char: impossible";
         }
     }
@@ -84,7 +85,8 @@ std::string Converter::to_int() const
         return "int: impossible";
     }
     if (type == TypeFloat || type == TypeDouble) {
-        if (numd != numd || numd == std::numeric_limits<double>::infinity()) {
+        if (numd != numd || numd == std::numeric_limits<double>::infinity() ||
+            numd == -std::numeric_limits<double>::infinity()) {
             return "int: impossible";
         }
     }
